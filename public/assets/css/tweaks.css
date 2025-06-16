@@ -1,0 +1,96 @@
+/* ========== BOOTSTRAP RESET SELECTIVO ========== */
+.site-root h1,
+.site-root h2,
+.site-root h3,
+.site-root h4,
+.site-root h5,
+.site-root h6 {
+    margin: 0;
+    /* sobrepõe heading margin do BS */
+    font-weight: 600;
+}
+
+.site-root .container,
+.site-root .row,
+.site-root [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+    /* remove gutters duplicados */
+}
+
+/* ========== SINCRONIZA CORES/TIPOGRAFIA ========== */
+:root {
+    --font-family: "Bricolage Grotesque", sans-serif;
+    --primary: #ff4c82;
+    --black: #1A1F2C;
+    --light-black: #576076;
+    --white: #ffffff;
+    --dark-theme-bg: #000;
+    --dark-theme-black: #0E1018;
+    --dark-theme-white: #f0f2f5;
+    --dark-theme-light-white: rgba(240, 242, 245, 0.7);
+    --paragraph: #616670;
+    --background: #ffe2eb;
+    --font-size: 16px;
+    --font-weight: 400;
+    --line-height: 1.6em;
+    --transision: all 0.1s ease-out 0s;
+    --border: #DBDFE5;
+}
+
+/* ========== COMPONENTES ISOLADOS ========== */
+.bento-card {
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(26, 31, 44, .25);
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bento-card-header,
+.bento-card-body {
+    padding: 1.5rem;
+}
+
+.bento-card-body {
+    flex: 1 1 auto;
+}
+
+/* -- Navegação -- */
+.site-root .navbar {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    box-shadow: 0 1px 2px rgba(26, 31, 44, .25);
+}
+
+/* Exemplo: sobrepõe link ativo do BS */
+.site-root .nav-link.active {
+    background: #ffd6e4;
+    border-radius: .5rem;
+    color: var(--bs-body-color);
+}
+
+/* -- Corrige imagens que ficavam “cortadas” -- */
+.profile-card .image img,
+.card-projects .project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* garante 100% do quadrado */
+}
+
+/* ========== UTILIDADES EXTRA ========== */
+.img-square {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.text-primary-soft {
+    color: color-mix(in srgb, var(--bs-primary) 70%, white);
+}
+
+.bg-soft {
+    background: color-mix(in srgb, var(--bs-primary) 10%, white);
+}
