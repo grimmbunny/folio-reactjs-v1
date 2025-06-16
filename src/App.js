@@ -13,8 +13,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/portfolio.html" element={<Portfolio />} />
-        <Route path="/index.html" element={<Home />} />
         <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
       </Routes>
     </BrowserRouter>
