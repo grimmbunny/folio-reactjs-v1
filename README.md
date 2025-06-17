@@ -1,29 +1,13 @@
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# folio-reactjs-v1
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+1 # Flavia Portfolio
+3 This repository contains the source code for a personal portfolio built with React...
+5 ## Requirements
+6 - Node.js 20 or newer
+7 - React 19
+9 ## Setup
+10 Install dependencies and start the development server:
+13 npm install --legacy-peer-deps
+14 npm start
+17 Run tests with:
+20 CI=true npm test --watchAll=false
+23 Create a production build with:
+26 npm run build
