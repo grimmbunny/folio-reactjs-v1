@@ -6,6 +6,7 @@ const portfolioItems = [
     slug: "tama",
     title: "Tama",
     subtitle: "WebApp",
+    categories: ["web"],
     // imagem principal
     mainImage: tamaImg,
     img: tamaImg,
@@ -41,6 +42,7 @@ const portfolioItems = [
     id: 2,
     title: "Tama",
     subtitle: "WebApp",
+    categories: ["web"],
     img: tamaImg, // JPEG importado
     link: "https://…",
   },

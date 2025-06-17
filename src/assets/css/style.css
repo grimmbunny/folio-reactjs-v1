@@ -3906,5 +3906,67 @@ p {
 }
 
 .mx-2 {
-	color: var(--dark-theme-light-white)
+	color: var(--dark-theme-light-white);
+}
+
+/* Portfolio filter buttons - Versão Melhorada */
+.portfolio-filters {
+	display: flex;
+	gap: var(--space-8);
+	margin-bottom: var(--space-24);
+	/* Aumentei a margem inferior para mais respiro */
+
+	/* Centraliza os botões horizontalmente */
+	justify-content: center;
+
+	/* Permite que os botões quebrem a linha em telas menores */
+	flex-wrap: wrap;
+}
+
+.portfolio-filters button {
+	border: 2px solid var(--border);
+	background-color: var(--white);
+	padding: var(--space-8) var(--space-16);
+	border-radius: var(--radius-8);
+	color: var(--black);
+	cursor: pointer;
+	font-weight: 500;
+	/* Deixa a fonte um pouco mais destacada */
+
+	/* Transição mais suave para todos os efeitos */
+	transition: all 0.25s ease-in-out;
+}
+
+/* Cores para o estado ativo e hover */
+.portfolio-filters button.active,
+.portfolio-filters button:hover {
+	color: var(--primary);
+	border-color: var(--primary);
+}
+
+/* Efeito de "levantar" aplicado apenas no hover */
+.portfolio-filters button:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-hover);
+	border-color: var(--primary);
+	/* Sombra sutil para profundidade */
+}
+
+/* --- Adaptação para o Tema Escuro --- */
+.dark-theme .portfolio-filters button {
+	background-color: var(--dark-theme-black);
+	color: var(--dark-theme-light-white);
+	border-color: var(--black);
+	/* Usando uma cor de borda que se ajuste ao fundo */
+}
+
+.dark-theme .portfolio-filters button:hover {
+	box-shadow: var(--shadow-dark-hover);
+	border-color: var(--primary);
+	/* Sombra ajustada para o tema escuro */
+}
+
+.dark-theme .portfolio-filters button.active {
+	color: var(--primary);
+	border-color: var(--primary);
 }

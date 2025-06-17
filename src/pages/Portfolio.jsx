@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,6 +11,16 @@ import proj2Thumb from "../assets/img/projects/project-2.png";
 import proj3Thumb from "../assets/img/projects/project-3.png";
 
 export default function Portfolio() {
+  const [filter, setFilter] = useState("all");
+  const categories = [
+    "all",
+    ...new Set(items.flatMap((i) => i.categories || [])),
+  ];
+  const filtered =
+    filter === "all"
+      ? items
+      : items.filter((it) => (it.categories || []).includes(filter));
+
   return (
     <div id="page-content">
       <Header />
@@ -35,9 +45,20 @@ export default function Portfolio() {
                   design partner to help take your business to the next level.</p> */}
                     </div>
                   </div>
+                  <div className="portfolio-filters mb-3">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setFilter(cat)}
+                        className={filter === cat ? "active" : ""}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
                   <div className="portfolio-area">
                     <div className="row g-4 parent-container row-cols-1 row-cols-md-2 ">
-                      {items.map((item) => (
+                      {filtered.map((item) => (
                         <div className="col-12 col-md-6">
                           <div key={item.id} className="portfolio-item">
                             <Link to={`/portfolio/${item.slug}`}>
@@ -84,7 +105,7 @@ export default function Portfolio() {
                         </div>
                       ))}
                     </div>
-                    <div className="pagination">
+                    {/* <div className="pagination">
                       <ul className="list-unstyled">
                         <li className="prev">
                           <button>
@@ -162,7 +183,7 @@ export default function Portfolio() {
                           </button>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
