@@ -3714,7 +3714,7 @@ p {
 		flex-direction: column;
 	}
 
-	.home-area .col-xl-4>.card {
+	.home-area .col-xl-4>.timeline-card {
 		flex-grow: 1;
 	}
 
