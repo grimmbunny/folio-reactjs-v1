@@ -37,9 +37,8 @@ export default function PortfolioDetails() {
         <section className="content-box-area mt-4">
           <div className="container">
             <div className="row g-4">
-              {/* sidebar/profile column */}
-              <ProfileCard />
-
+              {/* sidebar/profile column */}{" "}
+              <ProfileCard className="d-none d-md-block" />
               {/* details column */}
               <div className="col-xl-8">
                 <div className="card content-box-card">

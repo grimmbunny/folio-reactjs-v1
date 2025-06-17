@@ -8,7 +8,7 @@ export default function Services() {
     <>
       <div id="page-content">
         <Header />
-        <main className="construction-mode creative text-center py-5">
+        <main className="construction-mode creative text-center py-5 m-3">
           <div className="icon-ensemble d-flex justify-content-center align-items-center mb-4">
             <FaHammer size={40} className="mx-2 swing-animation " />
             <FaCog size={40} className="mx-2 spin-animation" />

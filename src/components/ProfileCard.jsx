@@ -1,9 +1,9 @@
 import React from "react";
 import { FaGithub, FaBehance, FaLinkedinIn, FaLink } from "react-icons/fa";
 
-export default function ProfileCard() {
+export default function ProfileCard({ className }) {
   return (
-    <div className="col-xl-4">
+    <div className={`col-xl-4 ${className || ""}`}>
       <div className="card profile-card">
         <div className="card-body">
           <div className="image text-center">

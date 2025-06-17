@@ -22,10 +22,9 @@ export default function About() {
 
       <section className="content-box-area mt-4">
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-4 ">
             {/* profile card */}
-
-            <ProfileCard />
+            <ProfileCard className="d-none d-md-block" />
 
             {/* about content */}
             <div className="col-xl-8">

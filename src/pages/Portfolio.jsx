@@ -25,8 +25,7 @@ export default function Portfolio() {
         <div className="container">
           <div className="row g-4">
             {/* coluna lateral com perfil */}
-
-            <ProfileCard />
+            <ProfileCard className="d-none d-md-block" />
 
             {/* coluna principal */}
             <div className="col-xl-8">

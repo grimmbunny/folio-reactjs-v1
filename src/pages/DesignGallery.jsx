@@ -30,7 +30,8 @@ export default function DesignGallery({ title, images }) {
       <section className="content-box-area mt-4">
         <div className="container">
           <div className="row g-4">
-            <ProfileCard />
+            <ProfileCard className="d-none d-md-block" />
+
             <div className="col-xl-8">
               <div className="card content-box-card">
                 <div className="card-body portfolio-card">
