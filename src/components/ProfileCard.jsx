@@ -7,7 +7,7 @@ export default function ProfileCard() {
       <div className="card profile-card">
         <div className="card-body">
           <div className="image text-center">
-            <img src="assets/img/images/profile.png" alt="profile" />
+            <img src="/assets/img/images/profile.png" alt="profile" />
           </div>
           <div className="text">
             <h3 className="card-title">Flávia Proença🤘</h3>
@@ -27,7 +27,7 @@ export default function ProfileCard() {
               Sistemas (Mackenzie).
             </p>
             <div className="social-media-icon">
-              <ul className="list-unstyled d-flex gap-3 justify-content-left mt-4">
+              <ul className="list-unstyled d-flex gap-2 justify-content-left mt-4">
                 <li>
                   <a
                     href="https://github.com/grimmbunny"

@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -7,23 +7,29 @@ export default function Header() {
         <div className="container">
           <div className="menu-container">
             <div className="logo">
-              <Link className="navbar-brand me-0" to="/">
+              <NavLink className="navbar-brand me-0" to="/">
                 <span>
                   Flávia<span className="primary">Proença</span>
                 </span>
-              </Link>
+              </NavLink>
             </div>
             <div className="navbar-main d-flex flex-grow-1">
               <div className="logo inner-logo d-block d-xl-none">
-                <Link className="navbar-brand me-0" to="/">
+                <NavLink className="navbar-brand me-0" to="/">
                   <span>
                     Flávia<span className="primary">Proença</span>
                   </span>
-                </Link>
+                </NavLink>
               </div>
               <ul className="navbar-info mx-auto">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <NavLink
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                    aria-current="page"
+                    to="/"
+                  >
                     <svg
                       className="nav-icon"
                       viewBox="0 0 15 15"
@@ -44,10 +50,15 @@ export default function Header() {
                       />
                     </svg>
                     <span>Home</span>
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/about" className="nav-link">
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                  >
                     <svg
                       className="nav-icon"
                       viewBox="0 0 18 18"
@@ -77,7 +88,12 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/services">
+                  <NavLink
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                    to="/services"
+                  >
                     <svg
                       className="nav-icon"
                       viewBox="0 0 16 16"
@@ -104,10 +120,15 @@ export default function Header() {
                       />
                     </svg>
                     Serviços
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/portfolio">
+                  <NavLink
+                    className={({ isActive }) =>
+                      "nav-link" + (isActive ? " active" : "")
+                    }
+                    to="/portfolio"
+                  >
                     <svg
                       className="nav-icon"
                       viewBox="0 0 18 17"
@@ -134,7 +155,7 @@ export default function Header() {
                       />
                     </svg>
                     Portfolio
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
               <div className="header-right-info d-flex align-items-center">

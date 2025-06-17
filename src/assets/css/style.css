@@ -1310,14 +1310,14 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	align-items: center;
 }
 
-.content-box-card .available-btn span i {
+.content-box-card .available-btn .me-1 {
 	font-size: 8px;
 	margin-right: 12px;
 	position: relative;
 	color: greenyellow;
 }
 
-.content-box-card .available-btn span i::after {
+.content-box-card .available-btn .me-1::after {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -3919,4 +3919,76 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .dark-theme .skillset-card .tools-main::-webkit-scrollbar-thumb,
 .dark-theme .skillset-card .skills-main::-webkit-scrollbar-thumb {
 	background: #4A5568;
+}
+
+
+/* Ponto de partida: encapsule num escopo se quiser (.creative .swing-animation) */
+@keyframes swing {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	25% {
+		transform: rotate(15deg);
+	}
+
+	50% {
+		transform: rotate(0deg);
+	}
+
+	75% {
+		transform: rotate(-10deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes bounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-15px);
+	}
+
+	60% {
+		transform: translateY(-7px);
+	}
+}
+
+.swing-animation {
+	display: inline-block;
+	animation: swing 2s ease-in-out infinite;
+}
+
+.spin-animation {
+	display: inline-block;
+	animation: spin 3s linear infinite;
+}
+
+.bounce-animation {
+	display: inline-block;
+	animation: bounce 2.5s ease infinite;
+}
+
+.mx-2 {
+	color: var(--dark-theme-light-white)
 }

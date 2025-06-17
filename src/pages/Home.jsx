@@ -7,6 +7,7 @@ import ProfileCard from "../components/ProfileCard";
 import { FaWhatsapp, FaRegEnvelope } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import portfolioItems from "../components/PortfolioItem";
 
 export default function Home() {
   return (
@@ -200,7 +201,7 @@ export default function Home() {
                   <div className="card-body">
                     <h3 className="card-title">
                       Recent Projects{" "}
-                      <a className="link-btn" href="portfolio.html">
+                      <a className="link-btn" href="/portfolio">
                         All Projects
                         <svg
                           className="icon"
@@ -311,7 +312,7 @@ export default function Home() {
                     <div className="card-body">
                       <h3 className="card-title">
                         Serviços
-                        <a className="link-btn" href="services.html">
+                        <a className="link-btn" href="/services">
                           Todos os serviços
                           <svg
                             className="icon"

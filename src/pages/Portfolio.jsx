@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProfileCard from "../components/ProfileCard";
+import items from "../components/PortfolioItem";
 
 // imgs (coloque em /public/assets ou importe)
 import tamataskThumb from "../assets/img/projects/tamatask square.jpg";
@@ -36,201 +37,52 @@ export default function Portfolio() {
                   </div>
                   <div className="portfolio-area">
                     <div className="row g-4 parent-container row-cols-1 row-cols-md-2 ">
-                      <div className="col-12 col-md-6">
-                        <div className="portfolio-item">
-                          <div className="image">
-                            <img
-                              src="assets/img/projects/tamatask square.jpg"
-                              alt="project-1"
-                              className="img-fluid w-100"
-                            />
-                            <a
-                              href="assets/img/projects/tamatask square.jpg"
-                              className="gallery-popup full-image-preview parent-container"
-                            >
-                              <svg
-                                className="icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                              >
-                                <path d="M10 4.167v11.666M4.167 10h11.666" />
-                              </svg>
-                            </a>
-                          </div>
-                          <div className="text">
-                            <div className="info">
-                              <a
-                                href="portfolio-details-tamatask.html"
-                                className="title"
-                              >
-                                FlowSaaS - SaaS Application Tools
-                              </a>
-                              <p className="subtitle">
-                                SaaS App | UI UX Design
-                              </p>
-                              <div className="visite-btn">
-                                <a href="portfolio-details-tamatask.html">
-                                  Visit Site
-                                  <svg
-                                    className="arrow-up"
-                                    width={14}
-                                    height={15}
-                                    viewBox="0 0 14 15"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M9.91634 4.5835L4.08301 10.4168"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                    <path
-                                      d="M4.66699 4.5835H9.91699V9.8335"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                  </svg>
-                                </a>
+                      {items.map((item) => (
+                        <div className="col-12 col-md-6">
+                          <div key={item.id} className="portfolio-item">
+                            <Link to={`/portfolio/${item.slug}`}>
+                              <div className="image">
+                                <img src={item.img} alt={item.title} />
+                              </div>
+                            </Link>
+                            <div className="text">
+                              <div className="info">
+                                <Link
+                                  to={`/portfolio/${item.slug}`}
+                                  className="title"
+                                >
+                                  {item.title}
+                                </Link>
+                                <p className="subtitle">{item.subtitle}</p>
+                                <div className="visite-btn">
+                                  <Link to={item.link}>
+                                    Visit Site
+                                    <svg
+                                      className="arrow-up"
+                                      width={14}
+                                      height={15}
+                                      viewBox="0 0 14 15"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M9.91634 4.5835L4.08301 10.4168"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
+                                      <path
+                                        d="M4.66699 4.5835H9.91699V9.8335"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                      />
+                                    </svg>
+                                  </Link>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <div className="portfolio-item">
-                          <div className="image">
-                            <img
-                              src="assets/img/projects/project-2.png"
-                              alt="project-2"
-                              className="img-fluid w-100"
-                            />
-                            <a
-                              href="assets/img/projects/project-2.png"
-                              className="gallery-popup full-image-preview parent-container"
-                            >
-                              <svg
-                                className="icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                              >
-                                <path d="M10 4.167v11.666M4.167 10h11.666" />
-                              </svg>
-                            </a>
-                          </div>
-                          <div className="text">
-                            <div className="info">
-                              <a
-                                href="portfolio-details.html"
-                                className="title"
-                              >
-                                AIMug - AI Writing Application Tools
-                              </a>
-                              <p className="subtitle">
-                                Product Design | Application
-                              </p>
-                              <div className="visite-btn">
-                                <a href="portfolio-details.html">
-                                  Visit Site
-                                  <svg
-                                    className="arrow-up"
-                                    width={14}
-                                    height={15}
-                                    viewBox="0 0 14 15"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M9.91634 4.5835L4.08301 10.4168"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                    <path
-                                      d="M4.66699 4.5835H9.91699V9.8335"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                  </svg>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-6">
-                        <div className="portfolio-item">
-                          <div className="image">
-                            <img
-                              src="assets/img/projects/project-3.png"
-                              alt="project-3"
-                              className="img-fluid w-100"
-                            />
-                            <a
-                              href="assets/img/projects/project-3.png"
-                              className="gallery-popup full-image-preview parent-container"
-                            >
-                              <svg
-                                className="icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                              >
-                                <path d="M10 4.167v11.666M4.167 10h11.666" />
-                              </svg>
-                            </a>
-                          </div>
-                          <div className="text">
-                            <div className="info">
-                              <a
-                                href="portfolio-details.html"
-                                className="title"
-                              >
-                                FlowArch - Architecture Service Website
-                              </a>
-                              <p className="subtitle">
-                                UI UX Design | Development
-                              </p>
-                              <div className="visite-btn">
-                                <a href="portfolio-details.html">
-                                  Visit Site
-                                  <svg
-                                    className="arrow-up"
-                                    width={14}
-                                    height={15}
-                                    viewBox="0 0 14 15"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M9.91634 4.5835L4.08301 10.4168"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                    <path
-                                      d="M4.66699 4.5835H9.91699V9.8335"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                    />
-                                  </svg>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                     <div className="pagination">
                       <ul className="list-unstyled">

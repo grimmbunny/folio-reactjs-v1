@@ -50,11 +50,20 @@ export default function initLegacy() {
   });
 
   /* ---------- Lightbox Magnific ---------- */
-  $(".parent-container").magnificPopup({
-    delegate: ".gallery-popup",
-    type: "image",
-    gallery: { enabled: true },
-  });
+  // $(".parent-container").magnificPopup({
+  //   delegate: ".gallery-popup",
+  //   type: "image",
+  //   gallery: { enabled: true },
+  // });
+
+  const $g = $(".parent-container");
+  if ($g.length) {
+    $g.magnificPopup({
+      delegate: ".gallery-popup",
+      type: "image",
+      gallery: { enabled: true },
+    });
+  }
 
   /* ---------- Sliders Slick (se usados) ---------- */
   $(".client-feedback-slider, .article-publications-slider").slick({
