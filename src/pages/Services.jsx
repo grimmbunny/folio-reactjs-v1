@@ -12,9 +12,8 @@ export default function Services() {
           <section className="content-box-area mt-4">
             <div className="container">
               <div className="row g-4">
-                <div className="col-xl-4">
-                  <ProfileCard />
-                </div>
+                <ProfileCard />
+
                 <div className="col-xl-8">
                   <div className="card content-box-card">
                     <div className="card-body">

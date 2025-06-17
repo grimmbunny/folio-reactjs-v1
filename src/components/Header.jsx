@@ -1,11 +1,4 @@
 import { NavLink, Link } from "react-router-dom";
-import {
-  FaHome,
-  FaUserAlt,
-  FaLayerGroup,
-  FaSuitcase,
-  FaBars,
-} from "react-icons/fa";
 
 export default function Header() {
   return (
@@ -14,27 +7,23 @@ export default function Header() {
         <div className="container">
           <div className="menu-container">
             <div className="logo">
-              <a className="navbar-brand me-0" href="index.html">
+              <Link className="navbar-brand me-0" to="/">
                 <span>
                   Flávia<span className="primary">Proença</span>
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="navbar-main d-flex flex-grow-1">
               <div className="logo inner-logo d-block d-xl-none">
-                <a className="navbar-brand me-0" href="index.html">
+                <Link className="navbar-brand me-0" to="/">
                   <span>
                     Flávia<span className="primary">Proença</span>
                   </span>
-                </a>
+                </Link>
               </div>
               <ul className="navbar-info mx-auto">
                 <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    href="index.html"
-                  >
+                  <Link className="nav-link active" aria-current="page" to="/">
                     <svg
                       className="nav-icon"
                       viewBox="0 0 15 15"
@@ -55,10 +44,9 @@ export default function Header() {
                       />
                     </svg>
                     <span>Home</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a className="nav-link" href="about.html"> */}
                   <NavLink to="/about" className="nav-link">
                     <svg
                       className="nav-icon"
@@ -89,7 +77,7 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="services.html">
+                  <Link className="nav-link" to="/services">
                     <svg
                       className="nav-icon"
                       viewBox="0 0 16 16"
@@ -116,10 +104,10 @@ export default function Header() {
                       />
                     </svg>
                     Serviços
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="portfolio.html">
+                  <Link className="nav-link" to="/portfolio">
                     <svg
                       className="nav-icon"
                       viewBox="0 0 18 17"
@@ -146,7 +134,7 @@ export default function Header() {
                       />
                     </svg>
                     Portfolio
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="header-right-info d-flex align-items-center">

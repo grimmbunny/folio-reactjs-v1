@@ -3,18 +3,12 @@ import React from "react";
 
 import ProfileCard from "../components/ProfileCard";
 
-import { useEffect } from "react";
-import initLegacy from "../legacy/legacy-home";
 // import { FaGithub, FaBehance, FaLinkedinIn, FaLink } from "react-icons/fa";
 import { FaWhatsapp, FaRegEnvelope } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  useEffect(() => {
-    initLegacy(); // aciona o bootstrap jQuery
-  }, []);
-
   return (
     <div id="page-content">
       <Header />
