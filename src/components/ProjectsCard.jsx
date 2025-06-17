@@ -16,32 +16,109 @@ const projects = [
 
 export default function ProjectsCard() {
   return (
-    <div className="card projects-card shadow rounded-4">
-      <div className="card-body p-0 overflow-hidden">
-        <div className="d-flex justify-content-between align-items-center p-4">
-          <h3 className="card-title fw-bold m-0">Projetos em Destaque</h3>
-          <Link to="/portfolio" className="btn btn-sm btn-outline-primary">
-            Ver todos
-          </Link>
-        </div>
-
-        <div className="row g-0">
-          {projects.map((p, idx) => (
-            <div key={idx} className="col-6 border-top border-end">
-              <Link
-                to={`/portfolio/${p.slug}`}
-                className="d-block w-100 h-100 position-relative"
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  className="img-fluid w-100 h-100 object-fit-cover"
-                  style={{ aspectRatio: "1 / 1" }}
-                />
-                <span className="overlay position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 opacity-0 hover-opacity-100 transition-opacity" />
-              </Link>
+    <div className="card card-projects">
+      <div className="card-body">
+        <h3 className="card-title">
+          Recent Projects{" "}
+          <a className="link-btn" href="/portfolio">
+            All Projects
+            <svg
+              className="icon"
+              width={20}
+              height={20}
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.16699 10H15.8337"
+                stroke="#4770FF"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M10.833 15L15.833 10"
+                stroke="#4770FF"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M10.833 5L15.833 10"
+                stroke="#4770FF"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </h3>
+        <div className="projects-main mt-24">
+          <div className="row g-4 parent-container">
+            <div className="col-lg-12">
+              <div className="project-item">
+                <div className="image ratio ratio-1x1">
+                  <img
+                    src="assets/img/projects/tamatask square.jpg"
+                    alt="project-1"
+                    className="img-fluid w-100"
+                  />
+                  <a
+                    href="assets/img/projects/tamatask square.jpg"
+                    className="gallery-popup full-image-preview parent-container"
+                  >
+                    <svg
+                      className="icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                    >
+                      <path d="M10 4.167v11.666M4.167 10h11.666" />
+                    </svg>
+                  </a>
+                  <div className="info">
+                    <span className="category">Product Design</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+            <div className="col-lg-12">
+              <div className="project-item">
+                <div className="image ratio ratio-1x1">
+                  <img
+                    src="assets/img/projects/tamatask square.jpg"
+                    alt="project-2"
+                    className="img-fluid w-100"
+                  />
+                  <a
+                    href="assets/img/projects/tamatask square.jpg"
+                    className="gallery-popup full-image-preview parent-container"
+                  >
+                    <svg
+                      className="icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                    >
+                      <path d="M10 4.167v11.666M4.167 10h11.666" />
+                    </svg>
+                  </a>
+                  <div className="info">
+                    <span className="category">Product Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

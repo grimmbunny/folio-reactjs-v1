@@ -8,6 +8,7 @@ import {
   FaBriefcase,
   FaCircle,
 } from "react-icons/fa";
+import { experiences, education } from "../components/CVData";
 
 // bg shapes (resolve via webpack)
 // import shape1 from "../assets/img/bg/banner-shape-1.png";
@@ -67,143 +68,39 @@ export default function About() {
                       <div className="cv-item">
                         <h3 className="mb-3">Experiência Profissional</h3>
                         <div className="scrollable-box">
-                          <div className="experience-entry">
-                            <h4>Designer Gráfica (Temporária)</h4>
-                            <span className="period">
-                              Agência Razow | ABR/2025 &amp; OUT/2024
-                            </span>
-                            <ul>
-                              <li>
-                                Criação de peças digitais e impressas para
-                                campanhas pontuais.{" "}
-                              </li>
-                              <li>
-                                Recontratada pela qualidade e agilidade nas
-                                entregas.{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Designer Gráfica &amp; Social Media</h4>
-                            <span className="period">
-                              D&amp;D Cosméticos | FEV/2024 - DEZ/2024
-                            </span>
-                            <ul>
-                              <li>
-                                Desenvolvimento de KVs, impressos e conteúdo
-                                para redes sociais.{" "}
-                              </li>
-                              <li>
-                                Aumento do engajamento digital com peças
-                                promocionais.{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Multidisciplinar Freelancer</h4>
-                            <span className="period">
-                              Muzza Studio | 2018 - Presente
-                            </span>
-                            <ul>
-                              <li>
-                                Entrega de projetos de design, web e editorial
-                                para diversos clientes (PMEs e pessoas físicas).{" "}
-                              </li>
-                              <li>
-                                Atuação em projetos para clientes como Razow,
-                                Sapiens e Eleve Comunicação.{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Designer Gráfica</h4>
-                            <span className="period">
-                              Fundação de Arte de Niterói | JAN/2022 - DEZ/2022
-                            </span>
-                            <ul>
-                              <li>
-                                Liderou branding e redes sociais de instituições
-                                culturais e direção de arte do ciclo
-                                "Modernismo(s)".{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Designer Gráfica</h4>
-                            <span className="period">
-                              Agência Razow | SET/2020 - DEZ/2021
-                            </span>
-                            <ul>
-                              <li>
-                                Criação de identidades e conteúdos para Evelyn
-                                Regly, VacaCast e MyMake.{" "}
-                              </li>
-                              <li>
-                                Desenvolvimento da identidade visual completa do
-                                podcast VacaCast.{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Diagramadora &amp; Capista</h4>
-                            <span className="period">
-                              Editora Dialética | FEV/2021 - OUT/2021
-                            </span>
-                            <ul>
-                              <li>
-                                Diagramação de livros físicos/digitais e criação
-                                de capas para autores.{" "}
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="experience-entry">
-                            <h4>Artista 2D &amp; UI/UX Designer</h4>
-                            <span className="period">
-                              ICAD / Vision Lab, PUC-Rio | JAN/2018 - DEZ/2019
-                            </span>
-                            <ul>
-                              <li>
-                                Atuação no jogo Shape Arena (Premiado na SBGames
-                                2019) como artista e UI designer.
-                              </li>
-                              <li>
-                                Criação do projeto solo de card-game
-                                "Constelário", exibido na SBGames 2019.{" "}
-                              </li>
-                            </ul>
-                          </div>
+                          {experiences.map((exp, idx) => (
+                            <div key={idx} className="experience-entry">
+                              <h4>{exp.title}</h4>
+                              <span className="period">
+                                {exp.subtitle} | {exp.date}
+                              </span>
+                              {exp.details && (
+                                <ul>
+                                  {exp.details.map((d, i) => (
+                                    <li key={i}>{d}</li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
                     <div className="col-lg-6">
                       <div className="cv-item">
                         <h3 className="mb-3">Educação &amp; Cursos</h3>
-                        <div className="experience-entry">
-                          <h4>Análise e Desenvolvimento de Sistemas</h4>
-                          <span className="period">
-                            Universidade Presbiteriana Mackenzie | FEV/24 -
-                            MAI/26
-                          </span>
-                        </div>
-                        <div className="experience-entry">
-                          <h4>Pós-graduação em UI/UX</h4>
-                          <span className="period">
-                            Faculdade Unyleya | FEV/20 - FEV/21
-                          </span>
-                        </div>
-                        <div className="experience-entry">
-                          <h4>Desenho Industrial (Bacharelado)</h4>
-                          <span className="period">
-                            PUC-Rio | AGO/15 - DEZ/19
-                          </span>
-                        </div>
-                        <div className="experience-entry">
-                          <h4>Cursos Livres Relevantes</h4>
-                          <p>
-                            UX/UI &amp; Front-End (Origamid), Bootcamp Design
-                            (Baseline), Google UX Design (Coursera).{" "}
-                          </p>
-                        </div>
+                        {education.map((edu, idx) => (
+                          <div key={idx} className="experience-entry">
+                            <h4>{edu.title}</h4>
+                            {edu.subtitle && (
+                              <span className="period">
+                                {edu.subtitle}
+                                {edu.date ? ` | ${edu.date}` : ""}
+                              </span>
+                            )}
+                            {edu.description && <p>{edu.description}</p>}
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <div className="col-lg-6">

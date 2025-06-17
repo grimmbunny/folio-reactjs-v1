@@ -7,7 +7,9 @@ import ProfileCard from "../components/ProfileCard";
 import { FaWhatsapp, FaRegEnvelope } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import portfolioItems from "../components/PortfolioItem";
+import TimelineCard from "../components/TimelineCard";
+import ProjectsCard from "../components/ProjectsCard";
+// import portfolioItems from "../components/PortfolioItem";
 
 export default function Home() {
   return (
@@ -21,66 +23,7 @@ export default function Home() {
               <ProfileCard />
               <div className="col-xl-4">
                 {/* TIMELINE */}
-                <div className="card timeline-card mb-4">
-                  <div className="card-body">
-                    <h3 className="card-title">Timeline</h3>
-                    <div className="timeline-main mt-24">
-                      <ul className="timeline-list timeline-slider list-unstyled">
-                        <li className="timeline-item">
-                          <div className="date">
-                            <p>2018 – Presente</p>
-                          </div>
-                          <div className="info">
-                            <h4 className="title">
-                              Freelancer Multidisciplinar
-                            </h4>
-                            <h6 className="subtitle">Muzza Studio</h6>
-                            <ul className="details">
-                              <li>
-                                Entregou projetos de design, web e editorial
-                                para diversos clientes (PMEs e pessoas físicas).
-                              </li>
-                              <li>
-                                Atuou em projetos para Razow, Sapiens e Eleve
-                                Comunicação.
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li className="timeline-item">
-                          <div className="date">
-                            <p>ABR/2025 &amp; OUT/2024</p>
-                          </div>
-                          <div className="info">
-                            <h4 className="title">
-                              Designer Gráfica (Temporária)
-                            </h4>
-                            <h6 className="subtitle">Agência Razow</h6>
-                            <ul className="details">
-                              <li>
-                                Recontratada pela qualidade e agilidade nas
-                                entregas.
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li className="timeline-item">
-                          <div className="date">
-                            <p>FEV/2024 – MAI/2026</p>
-                          </div>
-                          <div className="info">
-                            <h4 className="title">
-                              Análise e Desenvolvimento de Sistemas
-                            </h4>
-                            <h6 className="subtitle">
-                              Universidade Presbiteriana Mackenzie
-                            </h6>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <TimelineCard />
                 {/* SKILLSET */}
                 <div className="card skillset-card">
                   <div className="card-body">
@@ -197,112 +140,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="col-xl-4">
-                <div className="card card-projects">
-                  <div className="card-body">
-                    <h3 className="card-title">
-                      Recent Projects{" "}
-                      <a className="link-btn" href="/portfolio">
-                        All Projects
-                        <svg
-                          className="icon"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4.16699 10H15.8337"
-                            stroke="#4770FF"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M10.833 15L15.833 10"
-                            stroke="#4770FF"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M10.833 5L15.833 10"
-                            stroke="#4770FF"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </a>
-                    </h3>
-                    <div className="projects-main mt-24">
-                      <div className="row g-4 parent-container">
-                        <div className="col-lg-12">
-                          <div className="project-item">
-                            <div className="image ratio ratio-1x1">
-                              <img
-                                src="assets/img/projects/tamatask square.jpg"
-                                alt="project-1"
-                                className="img-fluid w-100"
-                              />
-                              <a
-                                href="assets/img/projects/tamatask square.jpg"
-                                className="gallery-popup full-image-preview parent-container"
-                              >
-                                <svg
-                                  className="icon"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="1.5"
-                                >
-                                  <path d="M10 4.167v11.666M4.167 10h11.666" />
-                                </svg>
-                              </a>
-                              <div className="info">
-                                <span className="category">Product Design</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-lg-12">
-                          <div className="project-item">
-                            <div className="image ratio ratio-1x1">
-                              <img
-                                src="assets/img/projects/tamatask square.jpg"
-                                alt="project-2"
-                                className="img-fluid w-100"
-                              />
-                              <a
-                                href="assets/img/projects/tamatask square.jpg"
-                                className="gallery-popup full-image-preview parent-container"
-                              >
-                                <svg
-                                  className="icon"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="1.5"
-                                >
-                                  <path d="M10 4.167v11.666M4.167 10h11.666" />
-                                </svg>
-                              </a>
-                              <div className="info">
-                                <span className="category">Product Design</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ProjectsCard />
               </div>
             </div>
             <div className="services-area mt-24">
