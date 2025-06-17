@@ -111,12 +111,12 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="portfolio-area">
-                    <div className="row g-4 parent-container row-cols-1 row-cols-md-2 ">
+                    <div className="row g-3 parent-container row-cols-1 row-cols-md-2 ">
                       {filtered.map((item) => (
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 col-md-6 col-lg-4">
                           <div key={item.id} className="portfolio-item">
                             <Link to={`/portfolio/${item.slug}`}>
-                              <div className="image">
+                              <div className="image ">
                                 <img src={item.img} alt={item.title} />
                               </div>
                             </Link>

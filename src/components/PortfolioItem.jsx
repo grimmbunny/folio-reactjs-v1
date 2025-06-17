@@ -11,7 +11,7 @@ const portfolioItems = [
     // miniaturas internas
     innerImages: [],
     clientFor: "Personal Project",
-    services: ["Product Design", "Development"],
+    services: ["HTML", "CSS", "JavaScript (Vanilla)", "LocalStorage", "Vercel"], // Atualizado
     website: "https://webapp-tamatask.vercel.app/",
     // array de parágrafos
     overview: [
@@ -31,6 +31,8 @@ const portfolioItems = [
     title: "Trabalhos de design - Social Media",
     categories: ["Design"],
     img: "https://i.imgur.com/Qe3aCI0.jpg",
+    website: "/portfolio/design-social",
+    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
   },
   {
     id: 3,
@@ -38,6 +40,8 @@ const portfolioItems = [
     title: "Trabalhos de design - Diagramação",
     categories: ["Design"],
     img: "https://i.imgur.com/AqNjAn6.png",
+    website: "/portfolio/design-diagramacao",
+    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
   },
   {
     id: 4,
@@ -45,6 +49,8 @@ const portfolioItems = [
     title: "Trabalhos de design - Slides e Pitch Decks",
     categories: ["Design"],
     img: "https://i.imgur.com/bWbqbbR.png",
+    website: "/portfolio/design-slides",
+    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
   },
   {
     id: 5,
@@ -52,6 +58,8 @@ const portfolioItems = [
     title: "Trabalhos de design - Branding e ID visual",
     categories: ["Design"],
     img: "https://i.imgur.com/y776Qs8.png",
+    website: "/portfolio/design-branding",
+    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
   },
   {
     id: 6,
@@ -61,7 +69,7 @@ const portfolioItems = [
     img: "https://i.imgur.com/AMTcIDI.png",
     innerImages: [],
     clientFor: "Concept",
-    services: ["Web Design"],
+    services: ["Figma"], // Atualizado
     website:
       "https://www.figma.com/design/VOdXNAVVW4MsxGN3rlHjNO/Wireframe-1?node-id=1-2",
     overview: ["Feito no figma, ainda não implementada"],
@@ -76,7 +84,14 @@ const portfolioItems = [
     img: "https://i.imgur.com/TtjgZcG.png",
     innerImages: [],
     clientFor: "Projeto próprio",
-    services: ["Web Design", "Development"],
+    services: [
+      "HTML",
+      "CSS",
+      "JavaScript (Vanilla)",
+      "jQuery",
+      "Bootstrap",
+      "Vercel",
+    ], // Atualizado
     website: "https://studiomuza-32m8dcbc2-grimmbunnys-projects.vercel.app/",
     overview: ["Responsivo. HTML, CSS, vanilla JS & JQuery, Bootstrap."],
     text1: "",
@@ -90,7 +105,7 @@ const portfolioItems = [
     img: "https://i.imgur.com/Vb4uwWd.png",
     innerImages: [],
     clientFor: "Estudo",
-    services: ["Development"],
+    services: ["HTML", "SASS", "JavaScript (Vanilla)", "Gulp", "Vercel"], // Atualizado
     website: "https://clone-disneyplus-bs1y5h2ac-grimmbunny.vercel.app/",
     overview: ["Responsivo. HTML, SASS, vanilla JS, Gulp."],
     text1: "",
@@ -104,7 +119,7 @@ const portfolioItems = [
     img: "https://i.imgur.com/lSCp5Zc.png",
     innerImages: [],
     clientFor: "Projeto próprio",
-    services: ["Web Design", "Development"],
+    services: ["HTML", "CSS", "JavaScript (Vanilla)", "Vercel"], // Atualizado
     website: "https://madebyflavia.dev/",
     overview: ["Responsivo. HTML, CSS, vanilla JS."],
     text1: "",
@@ -118,7 +133,7 @@ const portfolioItems = [
     img: "https://i.imgur.com/1mzHhep.png",
     innerImages: [],
     clientFor: "Projeto próprio",
-    services: ["Web Design", "Development"],
+    services: ["HTML", "CSS", "JavaScript (Vanilla)", "Vercel"], // Atualizado
     website: "https://madebyflavia.art/",
     overview: ["Responsivo. HTML, CSS, vanilla JS."],
     text1: "",
@@ -132,7 +147,7 @@ const portfolioItems = [
     img: "https://i.imgur.com/czr5LVm.png",
     innerImages: [],
     clientFor: "Estudo",
-    services: ["Development"],
+    services: ["HTML", "SASS", "JavaScript (Vanilla)", "Parcel", "Vercel"], // Atualizado
     website: "https://landingpage-proj-mt39959mr-grimmbunny.vercel.app/",
     overview: ["Responsivo. HTML, SASS, vanilla JS, Parcel."],
     text1: "",
@@ -147,8 +162,18 @@ const portfolioItems = [
     img: "../assets/img/projects/portfolio 2025-s.jpg",
     innerImages: [],
     clientFor: "Projeto Pessoal",
-    services: ["Product Design", "Desenvolvimento"],
-    website: "https://webapp-tamatask.vercel.app/",
+    services: [
+      "React",
+      "React Router",
+      "jQuery",
+      "Bootstrap",
+      "Magnific Popup",
+      "Slick Carousel",
+      "HTML",
+      "CSS",
+      "Vercel",
+    ], // Atualizado
+    website: "https://webapp-tamatask.vercel.app/", // Esta URL aponta para o TamaTask, considere se é a correta para o Portfólio 2025
     overview: [
       "Este portfólio web foi desenvolvido com React, integrando o React Router para navegação entre páginas e componentes personalizados que organizam as seções como Home, Sobre, Serviços e Portfólio.",
       "Embora baseado em uma estrutura moderna com React, o projeto também incorpora recursos visuais legados utilizando jQuery, permitindo integrar plugins como Magnific Popup (para lightbox em galerias) e Slick Carousel (para sliders responsivos). Para isso, o carregamento inicial do app expõe jQuery no escopo global e aplica estilos adicionais por meio de arquivos CSS convertidos de JavaScript vanilla.",
@@ -160,9 +185,9 @@ const portfolioItems = [
 • Páginas de detalhes para cada projeto, acessadas via rota com slug (por exemplo, /portfolio/tama).
 
 • Um script legado (legacy-home.js) que cuida de interações visuais como:
-  – Alternância de modo escuro,
-  – Menu mobile com animação,
-  – Efeitos de transição nas galerias de imagem.`,
+  – Alternância de modo escuro,
+  – Menu mobile com animação,
+  – Efeitos de transição nas galerias de imagem.`,
     text2: [
       "O layout é responsivo e foi iniciado a partir do Create React App. O projeto utiliza Bootstrap para estruturação de grid, React Icons para ícones personalizados e recursos adicionais herdados do template original em HTML/CSS.",
       "Principais tecnologias: React · React Router · jQuery · Bootstrap · Magnific Popup · Slick Carousel · HTML/CSS modularizado",
@@ -175,8 +200,8 @@ const portfolioItems = [
     categories: ["Web"],
     img: "../assets/img/projects/cliente1.jpg",
     innerImages: [],
-    clientFor: "Demo Client",
-    services: ["Web Design", "Development"],
+    clientFor: "Adriana",
+    services: ["JavaScript", "Vercel"], // Atualizado
     website: "https://demo-cliente1.vercel.app",
     overview: ["Website desenvolvido como demonstração para o cliente 1."],
     text1: "Projeto implementado utilizando JS e estilização personalizada.",
