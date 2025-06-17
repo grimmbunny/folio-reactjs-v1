@@ -4112,3 +4112,32 @@ p {
 		right: 15px;
 	}
 }
+
+.expertise-item .image svg {
+	/* Selecione o ícone ou o div wrapper */
+	transition: transform 0.2s ease-in-out;
+}
+
+.expertise-item:hover .image svg {
+	transform: translateY(-5px) scale(1.1);
+}
+
+.skill-item.badge {
+	transition: all 0.2s ease-in-out;
+}
+
+.skill-item.badge:hover {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	transform: translateY(-2px);
+	cursor: pointer;
+}
+
+
+.timeline-card .timeline-main:hover {
+	overflow-y: auto;
+}
+
+.skillset-card .tools-main:hover,
+.skillset-card .skills-main:hover {
+	overflow-x: auto;
+}

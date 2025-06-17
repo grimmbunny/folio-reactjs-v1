@@ -120,11 +120,11 @@ const portfolioItems = [
   {
     id: 7,
     slug: "studio-muza",
-    title: "Website do meu estúdio",
+    title: "Studio website",
     categories: ["Web"],
     img: "https://i.imgur.com/TtjgZcG.png",
     innerImages: [],
-    clientFor: "Projeto próprio",
+    clientFor: "",
     services: [
       "HTML",
       "CSS",
