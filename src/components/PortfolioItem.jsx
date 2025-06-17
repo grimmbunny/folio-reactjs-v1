@@ -27,7 +27,7 @@ const portfolioItems = [
     ],
   },
   {
-    id: 12, // This is the "Portfólio 2025" item, moved here
+    id: 12,
     slug: "portfolio-2025",
     title: "Portfólio 2025",
     categories: ["Web"],
@@ -46,7 +46,7 @@ const portfolioItems = [
       "CSS",
       "Vercel",
     ], // Atualizado
-    website: "https://webapp-tamatask.vercel.app/", // Esta URL aponta para o TamaTask, considere se é a correta para o Portfólio 2025
+    website: "https://www.madebyflavia.com/",
     overview: [
       "Este portfólio web foi desenvolvido com React, integrando o React Router para navegação entre páginas e componentes personalizados que organizam as seções como Home, Sobre, Serviços e Portfólio.",
       "Embora baseado em uma estrutura moderna com React, o projeto também incorpora recursos visuais legados utilizando jQuery, permitindo integrar plugins como Magnific Popup (para lightbox em galerias) e Slick Carousel (para sliders responsivos). Para isso, o carregamento inicial do app expõe jQuery no escopo global e aplica estilos adicionais por meio de arquivos CSS convertidos de JavaScript vanilla.",
@@ -73,7 +73,7 @@ const portfolioItems = [
     categories: ["Design"],
     img: "https://i.imgur.com/Qe3aCI0.jpg",
     website: "/portfolio/design-social",
-    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
+    services: [],
   },
   {
     id: 3,
@@ -82,7 +82,7 @@ const portfolioItems = [
     categories: ["Design"],
     img: "https://i.imgur.com/AqNjAn6.png",
     website: "/portfolio/design-diagramacao",
-    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
+    services: [],
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ const portfolioItems = [
     categories: ["Design"],
     img: "https://i.imgur.com/bWbqbbR.png",
     website: "/portfolio/design-slides",
-    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
+    services: [],
   },
   {
     id: 5,
@@ -100,7 +100,7 @@ const portfolioItems = [
     categories: ["Design"],
     img: "https://i.imgur.com/y776Qs8.png",
     website: "/portfolio/design-branding",
-    services: [], // Sem ferramentas específicas mencionadas no texto fornecido
+    services: [],
   },
   {
     id: 6,
