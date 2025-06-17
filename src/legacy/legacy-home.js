@@ -15,7 +15,8 @@ window.$ = window.jQuery = $;
  */
 export default function initLegacy() {
   /* ---------- Dark-mode ---------- */
-  const isDark = localStorage.getItem("darkMode") === "true";
+  const stored = localStorage.getItem("darkMode");
+  const isDark = stored !== "false";
   $("body").toggleClass("dark-theme", isDark);
   $("#page-content").fadeIn(0);
 

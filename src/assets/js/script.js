@@ -3,7 +3,8 @@
 
   // Theme color control js
   $(document).ready(function () {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    const stored = localStorage.getItem("darkMode");
+    const isDarkMode = stored !== "false"; // default to
     $("body").toggleClass("dark-theme", isDarkMode);
 
     $("#page-content").fadeIn(0);

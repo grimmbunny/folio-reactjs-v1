@@ -1,3 +1,4 @@
+// src/components/PortfolioItem.jsx
 import tamaImg from "../assets/img/projects/tamatask square.jpg";
 
 const portfolioItems = [
@@ -23,6 +24,46 @@ const portfolioItems = [
     text2: [
       "O código é totalmente em HTML, CSS e JavaScript (vanilla), sem frameworks. Há ainda um módulo opcional para usar localStorage e salvar o progresso do usuário (nível, XP e tarefas). Os assets incluem imagens do pet/reações e sons de aviso.",
       "“Gamificação” com funcionalidades de produtividade / manipulação do DOM, controle de áudio, animações por CSS e integração com APIs do navegador (como o localStorage).",
+    ],
+  },
+  {
+    id: 12, // This is the "Portfólio 2025" item, moved here
+    slug: "portfolio-2025",
+    title: "Portfólio 2025",
+    categories: ["Web"],
+    selected: true,
+    img: "../assets/img/projects/portfolio 2025-s.jpg",
+    innerImages: [],
+    clientFor: "Projeto Pessoal",
+    services: [
+      "React",
+      "React Router",
+      "jQuery",
+      "Bootstrap",
+      "Magnific Popup",
+      "Slick Carousel",
+      "HTML",
+      "CSS",
+      "Vercel",
+    ], // Atualizado
+    website: "https://webapp-tamatask.vercel.app/", // Esta URL aponta para o TamaTask, considere se é a correta para o Portfólio 2025
+    overview: [
+      "Este portfólio web foi desenvolvido com React, integrando o React Router para navegação entre páginas e componentes personalizados que organizam as seções como Home, Sobre, Serviços e Portfólio.",
+      "Embora baseado em uma estrutura moderna com React, o projeto também incorpora recursos visuais legados utilizando jQuery, permitindo integrar plugins como Magnific Popup (para lightbox em galerias) e Slick Carousel (para sliders responsivos). Para isso, o carregamento inicial do app expõe jQuery no escopo global e aplica estilos adicionais por meio de arquivos CSS convertidos de JavaScript vanilla.",
+    ],
+    text1: `O portfólio apresenta:
+
+• Lista de projetos filtrável com categorias, carregada dinamicamente.
+
+• Páginas de detalhes para cada projeto, acessadas via rota com slug (por exemplo, /portfolio/tama).
+
+• Um script legado (legacy-home.js) que cuida de interações visuais como:
+  – Alternância de modo escuro,
+  – Menu mobile com animação,
+  – Efeitos de transição nas galerias de imagem.`,
+    text2: [
+      "O layout é responsivo e foi iniciado a partir do Create React App. O projeto utiliza Bootstrap para estruturação de grid, React Icons para ícones personalizados e recursos adicionais herdados do template original em HTML/CSS.",
+      "Principais tecnologias: React · React Router · jQuery · Bootstrap · Magnific Popup · Slick Carousel · HTML/CSS modularizado",
     ],
   },
   {
@@ -152,46 +193,6 @@ const portfolioItems = [
     overview: ["Responsivo. HTML, SASS, vanilla JS, Parcel."],
     text1: "",
     text2: [],
-  },
-  {
-    id: 12,
-    slug: "portfolio-2025",
-    title: "Portfólio 2025",
-    categories: ["Web"],
-    selected: true,
-    img: "../assets/img/projects/portfolio 2025-s.jpg",
-    innerImages: [],
-    clientFor: "Projeto Pessoal",
-    services: [
-      "React",
-      "React Router",
-      "jQuery",
-      "Bootstrap",
-      "Magnific Popup",
-      "Slick Carousel",
-      "HTML",
-      "CSS",
-      "Vercel",
-    ], // Atualizado
-    website: "https://webapp-tamatask.vercel.app/", // Esta URL aponta para o TamaTask, considere se é a correta para o Portfólio 2025
-    overview: [
-      "Este portfólio web foi desenvolvido com React, integrando o React Router para navegação entre páginas e componentes personalizados que organizam as seções como Home, Sobre, Serviços e Portfólio.",
-      "Embora baseado em uma estrutura moderna com React, o projeto também incorpora recursos visuais legados utilizando jQuery, permitindo integrar plugins como Magnific Popup (para lightbox em galerias) e Slick Carousel (para sliders responsivos). Para isso, o carregamento inicial do app expõe jQuery no escopo global e aplica estilos adicionais por meio de arquivos CSS convertidos de JavaScript vanilla.",
-    ],
-    text1: `O portfólio apresenta:
-
-• Lista de projetos filtrável com categorias, carregada dinamicamente.
-
-• Páginas de detalhes para cada projeto, acessadas via rota com slug (por exemplo, /portfolio/tama).
-
-• Um script legado (legacy-home.js) que cuida de interações visuais como:
-  – Alternância de modo escuro,
-  – Menu mobile com animação,
-  – Efeitos de transição nas galerias de imagem.`,
-    text2: [
-      "O layout é responsivo e foi iniciado a partir do Create React App. O projeto utiliza Bootstrap para estruturação de grid, React Icons para ícones personalizados e recursos adicionais herdados do template original em HTML/CSS.",
-      "Principais tecnologias: React · React Router · jQuery · Bootstrap · Magnific Popup · Slick Carousel · HTML/CSS modularizado",
-    ],
   },
   {
     id: 13,

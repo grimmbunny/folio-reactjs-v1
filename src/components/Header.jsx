@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa6";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header-area">
       <nav className="navbar">
@@ -13,7 +17,11 @@ export default function Header() {
                 </span>
               </NavLink>
             </div>
-            <div className="navbar-main d-flex flex-grow-1">
+            <div
+              className={
+                "navbar-main d-flex flex-grow-1" + (menuOpen ? " show" : "")
+              }
+            >
               <div className="logo inner-logo d-block d-xl-none">
                 <NavLink className="navbar-brand me-0" to="/">
                   <span>
@@ -229,10 +237,19 @@ export default function Header() {
                 </button>
               </div>
             </div>
-            <div className="mobile-menu-overlay d-block d-lg-none" />
+            <div
+              className={
+                "mobile-menu-overlay d-block d-lg-none" +
+                (menuOpen ? " show" : "")
+              }
+              onClick={() => setMenuOpen(false)}
+            />
             <div className="mobile-menu-control-bar d-block d-xl-none">
-              <button className="mobile-menu-control-bar">
-                <i className="fas fa-bars" />
+              <button
+                className="mobile-menu-control-bar"
+                onClick={() => setMenuOpen(true)}
+              >
+                <FaBars />
               </button>
             </div>
           </div>
