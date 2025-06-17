@@ -74,10 +74,12 @@ export default function Portfolio() {
                                 >
                                   {item.title}
                                 </Link>
-                                <p className="subtitle">{item.subtitle}</p>
+                                <p className="subtitle">
+                                  {item.services?.join(", ")}
+                                </p>
                                 <div className="visite-btn">
-                                  <Link to={item.link}>
-                                    Visit Site
+                                  <Link to={item.website}>
+                                    Veja Live
                                     <svg
                                       className="arrow-up"
                                       width={14}

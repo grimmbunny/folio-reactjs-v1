@@ -25,6 +25,10 @@ export default function PortfolioDetails() {
     );
   }
 
+  // Função para renderizar parágrafos que podem conter HTML (como <b> ou <i>)
+  const renderHTML = (rawHTML) =>
+    React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
+
   return (
     <div id="page-content">
       <Header />
@@ -34,7 +38,6 @@ export default function PortfolioDetails() {
           <div className="container">
             <div className="row g-4">
               {/* sidebar/profile column */}
-
               <ProfileCard />
 
               {/* details column */}
@@ -100,8 +103,12 @@ export default function PortfolioDetails() {
                         {/* Overview */}
                         <div className="overview mb-4">
                           <h4 className="card-title mb-3">Overview</h4>
+                          {/* O 'dangerouslySetInnerHTML' é usado para renderizar o negrito (**) do seu texto como HTML */}
                           {item.overview.map((paragraph, idx) => (
-                            <p key={idx}>{paragraph}</p>
+                            <p
+                              key={idx}
+                              dangerouslySetInnerHTML={{ __html: paragraph }}
+                            />
                           ))}
                         </div>
                       </div>
@@ -123,30 +130,25 @@ export default function PortfolioDetails() {
                         </div>
                       </div>
 
-                      {/* Challenges */}
+                      {/* ======== CORREÇÃO #1 ======== */}
+                      {/* 'text1' agora é uma string, então renderizamos diretamente */}
                       <div className="more-info-block mb-4">
-                        <h3 className="more-info-title mb-3">Challenges</h3>
-                        {item.challenges.map((ch, idx) => (
-                          <div key={idx} className="mb-3">
-                            <h5 className="more-info-subtitle">{ch.title}</h5>
-                            <ul className="list-unstyled">
-                              <li>
-                                <b>Challenge:</b> {ch.description}
-                              </li>
-                              <li>
-                                <b>Solution:</b> {ch.solution}
-                              </li>
-                            </ul>
-                          </div>
-                        ))}
+                        <h4 className="card-title mb-3">
+                          Funcionalidades e Desafios
+                        </h4>
+                        <p dangerouslySetInnerHTML={{ __html: item.text1 }} />
                       </div>
 
-                      {/* Results */}
+                      {/* ======== CORREÇÃO #2 ======== */}
+                      {/* 'text2' é um array, então usamos .map para renderizar */}
                       <div className="more-info-block mb-4">
-                        <h3 className="more-info-title mb-3">
-                          Results / Conclusion
-                        </h3>
-                        <p>{item.results}</p>
+                        <h3 className="more-info-title mb-3">Conclusão</h3>
+                        {item.text2.map((paragraph, idx) => (
+                          <p
+                            key={idx}
+                            dangerouslySetInnerHTML={{ __html: paragraph }}
+                          />
+                        ))}
                       </div>
 
                       {/* Back button */}
