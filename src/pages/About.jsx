@@ -28,7 +28,7 @@ export default function About() {
 
             {/* about content */}
             <div className="col-xl-8">
-              <div className="card content-box-card shadow rounded-4 p-lg-4 p-3">
+              <div className="card content-box-card shadow rounded-4 p-lg-4 ">
                 <div className="card-body">
                   {/* header block */}
                   <div className="top-info">

@@ -4061,3 +4061,54 @@ p {
 	}
 
 }
+
+
+/* ... (seu CSS existente) ... */
+
+/* =============================
+ * Scroll to Top Button
+ ===============================*/
+.scroll-to-top-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: var(--primary);
+	/* Sua cor primária */
+	color: var(--white);
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	cursor: pointer;
+	opacity: 0;
+	/* Começa invisível */
+	visibility: hidden;
+	transform: translateY(20px);
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+	z-index: 1000;
+	/* Garante que esteja acima de outros elementos */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top-btn.show {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+/* Opcional: Ajustes para telas menores se o botão ficar muito grande */
+@media (max-width: 575.98px) {
+
+	/* Extra small devices */
+	.scroll-to-top-btn {
+		width: 45px;
+		height: 45px;
+		font-size: 1rem;
+		bottom: 15px;
+		right: 15px;
+	}
+}

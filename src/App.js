@@ -10,6 +10,7 @@ import DesignDiagramacaoPortfolio from "./pages/DesignDiagramacaoPortfolio";
 import DesignSlidesPortfolio from "./pages/DesignSlidesPortfolio";
 import DesignBrandingPortfolio from "./pages/DesignBrandingPortfolio";
 import initLegacy from "./legacy/legacy-home";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 import { useEffect } from "react";
 
@@ -52,6 +53,7 @@ function App() {
         />
         <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
       </Routes>
+      <ScrollToTopButton />
     </BrowserRouter>
   );
 }
