@@ -60,12 +60,12 @@ export default function ProjectsCard() {
               <div className="project-item">
                 <div className="image ratio ratio-1x1">
                   <img
-                    src="assets/img/projects/tamatask square.jpg"
+                    src="assets/img/projects/tamatask square-s.jpg"
                     alt="project-1"
                     className="img-fluid w-100"
                   />
                   <a
-                    href="assets/img/projects/tamatask square.jpg"
+                    href="assets/img/projects/tamatask square-s.jpg"
                     className="gallery-popup full-image-preview parent-container"
                   >
                     <svg
@@ -91,12 +91,12 @@ export default function ProjectsCard() {
               <div className="project-item">
                 <div className="image ratio ratio-1x1">
                   <img
-                    src="assets/img/projects/tamatask square.jpg"
+                    src="assets/img/projects/portfolio 2025-s.jpg"
                     alt="project-2"
                     className="img-fluid w-100"
                   />
                   <a
-                    href="assets/img/projects/tamatask square.jpg"
+                    href="assets/img/projects/portfolio 2025-s.jpg"
                     className="gallery-popup full-image-preview parent-container"
                   >
                     <svg
