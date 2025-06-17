@@ -4,6 +4,11 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import PortfolioDetails from "./pages/PortfolioDetails";
+
+import DesignSocialPortfolio from "./pages/DesignSocialPortfolio";
+import DesignDiagramacaoPortfolio from "./pages/DesignDiagramacaoPortfolio";
+import DesignSlidesPortfolio from "./pages/DesignSlidesPortfolio";
+import DesignBrandingPortfolio from "./pages/DesignBrandingPortfolio";
 import initLegacy from "./legacy/legacy-home";
 
 import { useEffect } from "react";
@@ -28,6 +33,23 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
+        <Route
+          path="/portfolio/design-social"
+          element={<DesignSocialPortfolio />}
+        />
+        <Route
+          path="/portfolio/design-diagramacao"
+          element={<DesignDiagramacaoPortfolio />}
+        />
+        <Route
+          path="/portfolio/design-slides"
+          element={<DesignSlidesPortfolio />}
+        />
+        <Route
+          path="/portfolio/design-branding"
+          element={<DesignBrandingPortfolio />}
+        />
         <Route path="/portfolio/:slug" element={<PortfolioDetails />} />
       </Routes>
     </BrowserRouter>
