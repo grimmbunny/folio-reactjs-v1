@@ -26,6 +26,7 @@
  * 01. Variable CSS start
 ===============================*/
 :root {
+	/* Existing Variables */
 	--font-family: "Bricolage Grotesque", sans-serif;
 	--primary: #ff4c82;
 	--black: #1A1F2C;
@@ -40,8 +41,71 @@
 	--font-size: 16px;
 	--font-weight: 400;
 	--line-height: 1.6em;
-	--transision: all 0.1s ease-out 0s;
 	--border: #DBDFE5;
+
+	/* New Variables for Repeated Values */
+	/* Font Sizes */
+	--fs-12: 12px;
+	--fs-14: 14px;
+	--fs-15: 15px;
+	--fs-18: 18px;
+	--fs-20: 20px;
+	--fs-22: 22px;
+	--fs-24: 24px;
+	--fs-30: 30px;
+	--fs-32: 32px;
+	--fs-40: 40px;
+
+	/* Font Weights */
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-900: 900;
+
+	/* Spacing & Sizing */
+	--space-4: 4px;
+	--space-6: 6px;
+	--space-8: 8px;
+	--space-10: 10px;
+	--space-12: 12px;
+	--space-16: 16px;
+	--space-20: 20px;
+	--space-24: 24px;
+	--space-30: 30px;
+	--space-40: 40px;
+	--space-50: 50px;
+
+	/* Border Radius */
+	--radius-4: 4px;
+	--radius-5: 5px;
+	--radius-8: 8px;
+	--radius-10: 10px;
+	--radius-16: 16px;
+	--radius-20: 20px;
+	--radius-50p: 50%;
+
+	/* Transitions (Corrected typo from --transision) */
+	--transition-fast: all 0.1s ease-out 0s;
+	--transition-medium: all 0.3s ease-in-out;
+	--transition-slow: all 0.5s;
+
+	/* Colors */
+	--color-social-icon: #384559;
+	--color-rating: #FAAD3D;
+	--color-green: green;
+	--color-greenyellow: greenyellow;
+	--color-red: red;
+	--color-nav-icon-stroke: #8991A7;
+
+	/* RGBA Colors & Shadows */
+	--shadow-main: 0 1px 2px 0 rgba(26, 31, 44, 0.25);
+	--shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+	--shadow-dark-hover: 0 4px 15px rgba(0, 0, 0, 0.2);
+	--bg-overlay-dark: rgba(14, 16, 24, 0.5);
+	--bg-success-light: rgba(0, 128, 0, 0.1);
+	--border-success-light: rgba(0, 128, 0, 0.5);
+	--bg-error-light: rgba(255, 0, 0, 0.1);
+	--border-error-light: rgba(255, 0, 0, 0.5);
+	--text-meta: rgba(87, 96, 118, 0.5);
 }
 
 /*=============================
@@ -62,7 +126,7 @@ body {
 	color: var(--black);
 	overflow-x: hidden;
 	background-color: var(--background);
-	padding: 24px 0 24px 0;
+	padding: var(--space-24) 0;
 	min-height: 100vh;
 }
 
@@ -84,11 +148,11 @@ small {
 
 a,
 button {
-	-webkit-transition: all 0.1s ease-out 0s;
-	-moz-transition: all 0.1s ease-out 0s;
-	-ms-transition: all 0.1s ease-out 0s;
-	-o-transition: all 0.1s ease-out 0s;
-	transition: all 0.1s ease-out 0s;
+	-webkit-transition: var(--transition-fast);
+	-moz-transition: var(--transition-fast);
+	-ms-transition: var(--transition-fast);
+	-o-transition: var(--transition-fast);
+	transition: var(--transition-fast);
 	text-decoration: none;
 }
 
@@ -123,18 +187,8 @@ p {
 	text-transform: capitalize;
 }
 
-*::-moz-selection {
-	background: var(--primary);
-	color: var(--white);
-	text-shadow: none;
-}
-
-::-moz-selection {
-	background: var(--primary);
-	color: var(--white);
-	text-shadow: none;
-}
-
+*::-moz-selection,
+::-moz-selection,
 ::selection {
 	background: var(--primary);
 	color: var(--white);
@@ -142,30 +196,39 @@ p {
 }
 
 .mt-24 {
-	margin-top: 24px;
+	margin-top: var(--space-24);
 }
 
 .mb-24 {
-	margin-bottom: 24px;
+	margin-bottom: var(--space-24);
 }
 
-/* #page-content {
-	display: none;
-} */
-
-/* Background Shapes */
-.background-shapes .shape-1 {
+.background-shapes .shape-1,
+.background-shapes .shape-2,
+.background-shapes .threed-shape-1,
+.background-shapes .threed-shape-2 {
 	position: fixed;
+	z-index: -1;
+}
+
+.background-shapes .shape-1 {
 	top: -20%;
 	left: -20%;
-	z-index: -1;
 }
 
 .background-shapes .shape-2 {
-	position: fixed;
 	bottom: -20%;
 	right: -20%;
-	z-index: -1;
+}
+
+.background-shapes .threed-shape-1 {
+	top: 20%;
+	left: 10%;
+}
+
+.background-shapes .threed-shape-2 {
+	bottom: 20%;
+	right: 9%;
 }
 
 .background-shapes .common-shape {
@@ -182,34 +245,19 @@ p {
 	}
 }
 
-.background-shapes .threed-shape-1 {
-	position: fixed;
-	top: 20%;
-	left: 10%;
-	z-index: -1;
-}
-
-.background-shapes .threed-shape-2 {
-	position: fixed;
-	bottom: 20%;
-	right: 9%;
-	z-index: -1;
-}
-
-/* Card Title */
 .card-title {
-	font-size: 24px;
-	font-weight: 600;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-600);
 	line-height: 1.333em;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 24px;
+	gap: var(--space-24);
 }
 
 .card-title .link-btn {
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	color: var(--primary);
 	line-height: 1.5em;
 	border-bottom: 1px solid var(--border);
@@ -223,41 +271,39 @@ p {
 	stroke: var(--primary);
 }
 
-/* Common Card Styles */
 .card {
 	border: 0;
 	background-color: var(--white);
-	box-shadow: 0 1px 2px 0 rgba(26, 31, 44, 0.25);
-	border-radius: 16px;
+	box-shadow: var(--shadow-main);
+	border-radius: var(--radius-16);
 	height: 100%;
 }
 
 .card-body {
-	padding: 24px;
+	padding: var(--space-24);
 }
 
-/* Common Button Groups */
 .common-button-groups {
-	margin-top: 24px;
+	margin-top: var(--space-24);
 }
 
 .common-button-groups .btn {
 	background-color: var(--primary);
-	border-radius: 8px;
-	padding: 16px 24px;
-	font-size: 16px;
-	font-weight: 500;
+	border-radius: var(--radius-8);
+	padding: var(--space-16) var(--space-24);
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--white);
 	line-height: 1.5em;
-	margin-right: 8px;
+	margin-right: var(--space-8);
 }
 
 .common-button-groups .btn:hover {
-	background-color: #2563EB;
+	background-color: var(--primary);
 }
 
 .common-button-groups .btn .icon {
-	margin-right: 8px;
+	margin-right: var(--space-8);
 }
 
 .common-button-groups .btn.btn-call:focus {
@@ -273,19 +319,19 @@ p {
 }
 
 .common-button-groups .btn.btn-copy .icon {
-	stroke: #1A1F2C;
-	transition: var(--transision);
+	stroke: var(--black);
+	transition: var(--transition-fast);
 }
 
 .common-button-groups .btn.btn-copy::before {
 	position: absolute;
 	content: "Copied to clipboard";
 	background-color: var(--black);
-	font-size: 12px;
-	font-weight: 600;
+	font-size: var(--fs-12);
+	font-weight: var(--fw-600);
 	color: var(--white);
-	border-radius: 5px;
-	padding: 4px 12px;
+	border-radius: var(--radius-5);
+	padding: var(--space-4) var(--space-12);
 	line-height: 14px;
 	white-space: nowrap;
 	top: -28px;
@@ -302,51 +348,49 @@ p {
 	background-color: var(--background);
 }
 
-/* Social Media Icons */
 .social-media-icon {
-	margin-top: 30px;
+	margin-top: var(--space-30);
 }
 
 .social-media-icon ul li {
 	display: inline-block;
-	margin-right: 4px;
+	margin-right: var(--space-4);
 }
 
 .social-media-icon ul li a {
-	color: #384559;
-	font-size: 20px;
-	width: 40px;
-	height: 40px;
-	border-radius: 8px;
-	border: 1px solid var(--border);
+	color: var(--color-social-icon);
+	font-size: var(--fs-20);
+	width: var(--space-40);
+	height: var(--space-40);
+	border-radius: var(--radius-8);
+	background-color: var(--background);
 	text-align: center;
-	line-height: 40px;
+	line-height: var(--space-40);
 }
 
 .social-media-icon ul li a:hover {
 	color: var(--primary);
 }
 
-/* Pagination */
 .pagination {
 	display: flex;
 	justify-content: center;
-	margin-top: 40px;
+	margin-top: var(--space-40);
 }
 
 .pagination ul {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: var(--space-8);
 }
 
 .pagination ul li button {
 	width: 36px;
 	height: 36px;
 	border: 1px solid var(--border);
-	border-radius: 8px;
-	font-size: 16px;
-	font-weight: 400;
+	border-radius: var(--radius-8);
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	color: var(--light-black);
 	background-color: var(--white);
 	display: flex;
@@ -370,11 +414,11 @@ p {
 	transform: translateX(-50%);
 	white-space: nowrap;
 	background-color: var(--black);
-	font-size: 12px;
-	font-weight: 600;
+	font-size: var(--fs-12);
+	font-weight: var(--fw-600);
 	color: var(--white);
-	border-radius: 5px;
-	padding: 4px 12px;
+	border-radius: var(--radius-5);
+	padding: var(--space-4) var(--space-12);
 	line-height: 14px;
 	display: none;
 }
@@ -384,8 +428,8 @@ p {
 }
 
 .pagination ul li button .icon {
-	width: 16px;
-	height: 16px;
+	width: var(--space-16);
+	height: var(--space-16);
 	stroke: var(--light-black);
 }
 
@@ -402,8 +446,8 @@ p {
 }
 
 .pagination ul li button .icon-arrow-right {
-	width: 20px;
-	height: 20px;
+	width: var(--space-20);
+	height: var(--space-20);
 	position: relative;
 	top: -2px;
 }
@@ -412,28 +456,26 @@ p {
 	display: block;
 }
 
-/* AJAX Response */
 .ajax-response.error {
-	margin-top: 20px;
-	color: red;
-	font-size: 14px;
-	font-weight: 500;
-	background-color: rgba(255, 0, 0, 0.1);
-	border: 1px solid rgba(255, 0, 0, 0.5);
-	border-radius: 8px;
-	padding: 10px 20px;
+	margin-top: var(--space-20);
+	color: var(--color-red);
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
+	background-color: var(--bg-error-light);
+	border: 1px solid var(--border-error-light);
+	border-radius: var(--radius-8);
+	padding: var(--space-10) var(--space-20);
 }
 
 .ajax-response.success {
-	margin-top: 20px;
-	color: green;
-	background-color: rgba(0, 128, 0, 0.1);
-	border: 1px solid rgba(0, 128, 0, 0.5);
-	font-weight: 500;
-	font-size: 14px;
-	font-weight: 500;
-	border-radius: 8px;
-	padding: 10px 20px;
+	margin-top: var(--space-20);
+	color: var(--color-green);
+	background-color: var(--bg-success-light);
+	border: 1px solid var(--border-success-light);
+	font-weight: var(--fw-500);
+	font-size: var(--fs-14);
+	border-radius: var(--radius-8);
+	padding: var(--space-10) var(--space-20);
 }
 
 /*=============================
@@ -448,24 +490,19 @@ p {
 
 .header-area .menu-container {
 	background-color: var(--white);
-	box-shadow: 0 1px 2px 0 rgba(26, 31, 44, 0.25);
-	border-radius: 16px;
-	padding: 10px 10px 10px 24px;
+	box-shadow: var(--shadow-main);
+	border-radius: var(--radius-16);
+	padding: var(--space-10) var(--space-10) var(--space-10) var(--space-24);
 	display: flex;
 	width: 100%;
 	align-items: center;
 	gap: 15px;
 }
 
-.header-area .container .navbar-main {
-	display: inline-flex;
-	gap: 12px;
-	align-items: center;
-}
-
+.header-area .container .navbar-main,
 .header-area .container .navbar-brand {
 	display: inline-flex;
-	gap: 12px;
+	gap: var(--space-12);
 	align-items: center;
 }
 
@@ -474,8 +511,8 @@ p {
 }
 
 .header-area .container .navbar-brand span {
-	font-size: 24px;
-	font-weight: 600;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-600);
 	line-height: 1em;
 	color: var(--black);
 }
@@ -503,36 +540,30 @@ p {
 
 .header-area .navbar-info .nav-link {
 	color: var(--light-black);
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	line-height: 120%;
 	display: flex;
 	align-items: center;
-	padding: 10px 12px !important;
-	border-radius: 8px;
+	padding: var(--space-10) var(--space-12) !important;
+	border-radius: var(--radius-8);
 }
 
 .header-area .navbar-info .nav-link .nav-icon {
-	stroke: #8991A7;
-	width: 20px;
-	height: 20px;
+	stroke: var(--color-nav-icon-stroke);
+	width: var(--space-20);
+	height: var(--space-20);
 	margin-right: 11px;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 }
 
-.header-area .navbar-info .nav-link.active {
-	color: var(--black);
-	background-color: var(--background);
-}
-
-.header-area .navbar-info .nav-link.active .nav-icon {
-	stroke: var(--black);
-}
-
+.header-area .navbar-info .nav-link.active,
 .header-area .navbar-info .nav-item:hover .nav-link {
 	background-color: var(--background);
+	color: var(--black);
 }
 
+.header-area .navbar-info .nav-link.active .nav-icon,
 .header-area .navbar-info .nav-item:hover .nav-link .nav-icon {
 	stroke: var(--black);
 }
@@ -543,14 +574,14 @@ p {
 }
 
 .header-area .header-right-info .theme-control-btn span {
-	width: 40px;
-	height: 40px;
-	border-radius: 5px;
+	width: var(--space-40);
+	height: var(--space-40);
+	border-radius: var(--radius-5);
 	background-color: transparent;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: var(--transition);
+	transition: var(--transition-fast);
 }
 
 .theme-control-btn .light {
@@ -571,13 +602,13 @@ p {
 
 .header-area .header-right-info .lets-talk-btn {
 	background-color: var(--black);
-	border-radius: 8px;
-	padding: 16px 24px;
-	font-size: 16px;
-	font-weight: 600;
+	border-radius: var(--radius-8);
+	padding: var(--space-16) var(--space-24);
+	font-size: var(--font-size);
+	font-weight: var(--fw-600);
 	color: var(--white);
 	line-height: 1.2em;
-	margin-left: 16px;
+	margin-left: var(--space-16);
 }
 
 .header-area .header-right-info .lets-talk-btn:hover {
@@ -585,13 +616,13 @@ p {
 }
 
 .header-area .header-right-info .lets-talk-btn .icon {
-	margin-left: 8px;
+	margin-left: var(--space-8);
 }
 
 .header-area .mobile-menu-control-bar .mobile-menu-control-bar {
 	background-color: transparent;
 	border: 0;
-	font-size: 22px;
+	font-size: var(--fs-22);
 	margin-top: 2px;
 	margin-right: 5px;
 }
@@ -606,7 +637,7 @@ p {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(14, 16, 24, 0.5);
+	background-color: var(--bg-overlay-dark);
 	z-index: 999;
 	visibility: hidden;
 	opacity: 0;
@@ -622,13 +653,12 @@ p {
  * 04. Home page CSS Start
 ===============================*/
 .home-area {
-	margin-top: 24px;
+	margin-top: var(--space-24);
 }
 
-/* Profile Card */
 .profile-card .image {
 	background-color: var(--background);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -644,44 +674,43 @@ p {
 }
 
 .profile-card .text {
-	margin-top: 24px;
+	margin-top: var(--space-24);
 }
 
 .profile-card .text .profile-subtitle {
-	font-size: 16px;
-	font-weight: 600;
+	font-size: var(--font-size);
+	font-weight: var(--fw-600);
 	color: var(--primary);
 	line-height: 1.5em;
-	margin-top: 4px;
-	margin-bottom: 16px;
+	margin-top: var(--space-4);
+	margin-bottom: var(--space-16);
 }
 
 .profile-card .text p {
-	margin-top: 8px;
+	margin-top: var(--space-8);
 	color: var(--light-black);
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	line-height: 1.5em;
 	margin-bottom: 1rem;
 }
 
 .profile-card .text p span {
 	color: var(--black);
-	font-weight: 600;
+	font-weight: var(--fw-600);
 }
 
-/* Card Projects */
 .card-projects .project-item .image {
 	background-color: var(--background);
-	padding: 24px;
+	padding: var(--space-24);
 	padding-bottom: 0;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	overflow: hidden;
 	position: relative;
 }
 
 .card-projects .project-item .image img {
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -695,13 +724,13 @@ p {
 }
 
 .card-projects .project-item .image .info .category {
-	font-size: 12px;
-	font-weight: 500;
+	font-size: var(--fs-12);
+	font-weight: var(--fw-500);
 	color: var(--primary);
 	background-color: var(--white);
-	border-radius: 4px;
-	padding: 4px 8px;
-	margin: 16px;
+	border-radius: var(--radius-4);
+	padding: var(--space-4) var(--space-8);
+	margin: var(--space-16);
 	line-height: 1.333em;
 }
 
@@ -711,23 +740,23 @@ p {
 	left: 50%;
 	transform: translate(-50%);
 	z-index: 9;
-	width: 40px;
-	height: 40px;
+	width: var(--space-40);
+	height: var(--space-40);
 	background-color: var(--white);
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	text-align: center;
 	line-height: 38px;
 	color: var(--primary);
 	filter: drop-shadow(0 12px 12px rgba(26, 31, 44, 0.25));
 	margin-top: -10px;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 	visibility: hidden;
 	opacity: 0;
 }
 
 .card-projects .project-item .image .full-image-preview .icon {
-	width: 22px;
-	height: 22px;
+	width: var(--fs-22);
+	height: var(--fs-22);
 }
 
 .card-projects .project-item .image:hover .full-image-preview {
@@ -735,7 +764,6 @@ p {
 	opacity: 1;
 }
 
-/* Expertise Card (Icons) */
 .expertise-card {
 	height: auto;
 }
@@ -747,63 +775,60 @@ p {
 
 .expertise-card .expertise-item .image {
 	background-color: var(--background);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	padding: 14px 10px;
 }
 
 .expertise-card .expertise-item .image img {
-	width: 32px;
-	height: 32px;
+	width: var(--fs-32);
+	height: var(--fs-32);
 }
 
 .expertise-card .expertise-item .text .title {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.5em;
-	margin-top: 8px;
+	margin-top: var(--space-8);
 }
 
-/* Services Item */
 .services-item {
 	background-color: var(--background);
-	padding: 16px 16px 24px 16px;
-	border-radius: 16px;
+	padding: var(--space-16) var(--space-16) var(--space-24) var(--space-16);
+	border-radius: var(--radius-16);
 }
 
 .services-item .image {
 	background-color: var(--white);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	padding: 25px 14px;
 }
 
 .services-item .text .title {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.5em;
-	margin-top: 16px;
+	margin-top: var(--space-16);
 }
 
-/* Lets Talk Together Card */
 .lets-talk-together-card .scrolling-info {
 	background-color: var(--background);
 	overflow: hidden;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	height: 56px;
-	margin-bottom: 24px;
+	margin-bottom: var(--space-24);
 	display: flex;
 	align-items: center;
-	overflow: hidden;
 	white-space: nowrap;
 }
 
 .lets-talk-together-card .scrolling-info p {
-	font-size: 18px !important;
-	font-weight: 500 !important;
+	font-size: var(--fs-18) !important;
+	font-weight: var(--fw-500) !important;
 	color: var(--light-black);
 	animation: marquee 20s linear infinite;
-	margin-right: 10px;
+	margin-right: var(--space-10);
 }
 
 .lets-talk-together-card .scrolling-info .slider-item {
@@ -811,26 +836,26 @@ p {
 }
 
 @keyframes scrolling {
-	0% {
-		transform: translateX(35%)
+	from {
+		transform: translateX(35%);
 	}
 
 	to {
-		transform: translateX(calc(-100% - 1.5rem))
+		transform: translateX(calc(-100% - 1.5rem));
 	}
 }
 
 .lets-talk-together-card .card-title {
-	font-size: 40px;
-	font-weight: 600;
+	font-size: var(--fs-40);
+	font-weight: var(--fw-600);
 	color: var(--black);
 	line-height: 1.375em;
 	display: block;
 }
 
 .lets-talk-together-card .link-btn {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--primary);
 	margin-top: 14px;
 	border-bottom: 1px solid var(--border);
@@ -844,20 +869,19 @@ p {
 	stroke: var(--primary) !important;
 }
 
-/* Contact Info in Let's Talk Card */
 .contact-info-wrap {
 	border-top: 1px solid var(--border);
-	padding-top: 24px;
-	margin-top: 24px;
+	padding-top: var(--space-24);
+	margin-top: var(--space-24);
 }
 
 .contact-info-link {
 	display: block;
 	color: var(--light-black);
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	text-decoration: none;
-	margin-bottom: 12px;
+	margin-bottom: var(--space-12);
 }
 
 .contact-info-link:last-child {
@@ -869,13 +893,12 @@ p {
 }
 
 .contact-info-link i {
-	margin-right: 10px;
-	width: 20px;
+	margin-right: var(--space-10);
+	width: var(--space-20);
 	text-align: center;
 	color: var(--primary);
 }
 
-/* Timeline Card with Vertical Animation */
 .timeline-card .card-body {
 	height: 299px;
 	display: flex;
@@ -887,14 +910,14 @@ p {
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: var(--space-40);
 }
 
 .timeline-card .timeline-list {
 	position: relative;
 	border-left: 2px solid var(--border);
-	padding-left: 30px;
-	margin-left: 6px;
+	padding-left: var(--space-30);
+	margin-left: var(--space-6);
 }
 
 .timeline-slider {
@@ -917,8 +940,7 @@ p {
 
 .timeline-card .timeline-item {
 	position: relative;
-	padding-bottom: 24px;
-	/* Adjusted padding-bottom */
+	padding-bottom: var(--space-24);
 }
 
 .timeline-card .timeline-item:last-child {
@@ -932,32 +954,32 @@ p {
 	left: -39px;
 	width: 14px;
 	height: 14px;
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	background-color: var(--background);
 	border: 3px solid var(--primary);
 }
 
 .timeline-card .timeline-item .date p {
-	font-size: 14px;
-	font-weight: 500;
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
 	color: var(--light-black);
-	margin-bottom: 4px;
+	margin-bottom: var(--space-4);
 }
 
 .timeline-card .timeline-item .info .title {
-	font-size: 16px;
-	font-weight: 600;
+	font-size: var(--font-size);
+	font-weight: var(--fw-600);
 	color: var(--black);
 	line-height: 1.4em;
 	margin-bottom: 2px;
 }
 
 .timeline-card .timeline-item .info .subtitle {
-	font-size: 14px;
-	font-weight: 400;
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
 	color: var(--primary);
 	line-height: 1.5em;
-	margin-bottom: 8px;
+	margin-bottom: var(--space-8);
 }
 
 .timeline-card .timeline-item .info .details {
@@ -967,9 +989,9 @@ p {
 }
 
 .timeline-card .timeline-item .info .details li {
-	font-size: 14px;
+	font-size: var(--fs-14);
 	color: var(--paragraph);
-	margin-bottom: 4px;
+	margin-bottom: var(--space-4);
 	line-height: 1.5;
 	position: relative;
 	padding-left: 15px;
@@ -982,44 +1004,35 @@ p {
 	color: var(--primary);
 }
 
-/* Timeline Scrollbar Styles */
 .timeline-card .timeline-main::-webkit-scrollbar {
-	width: 4px;
+	width: var(--space-4);
 }
 
 .timeline-card .timeline-main::-webkit-scrollbar-track {
 	background: var(--background);
-	border-radius: 4px;
+	border-radius: var(--radius-4);
 }
 
 .timeline-card .timeline-main::-webkit-scrollbar-thumb {
 	background: #ccc;
-	border-radius: 4px;
+	border-radius: var(--radius-4);
 }
 
 .timeline-card .timeline-main::-webkit-scrollbar-thumb:hover {
 	background: #aaa;
 }
 
-/* Skillset Card (Icons & Skills) */
 .skillset-card .card-body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
 }
 
-/* 
-.skillset-card {
-	max-height: 40%;
-} */
-
 .skillset-card .tools-main,
 .skillset-card .skills-main {
-	/* flex: 1; */
 	min-height: 0;
 }
 
-/* Tools Scroller (Icons) */
 .skillset-card .tools-main {
 	overflow: hidden;
 	display: flex;
@@ -1031,11 +1044,7 @@ p {
 	flex-shrink: 0;
 	gap: 1rem;
 	width: fit-content;
-}
-
-.tools-slider {
 	animation: scrollXTools 10s linear infinite;
-
 }
 
 .skillset-card .tools-main:hover .tools-slider {
@@ -1049,26 +1058,25 @@ p {
 
 .skillset-card .expertise-item .image {
 	background-color: var(--background);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	padding: 14px 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 90px;
-	width: 90px;
+	height: 72px;
+	width: 72px;
 }
 
-
 .skillset-card .expertise-item .image img {
-	max-width: 40px;
+	max-width: var(--space-40);
 }
 
 .skillset-card .expertise-item .text .title {
-	font-size: 14px;
-	font-weight: 500;
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
 	color: var(--light-black);
 	line-height: 1.5em;
-	margin-top: 8px;
+	margin-top: var(--space-8);
 }
 
 @keyframes scrollXTools {
@@ -1081,37 +1089,24 @@ p {
 	}
 }
 
-/* ----------------------------------------------------
-   SKILL ICONS → exatamente 2 linhas
-   -------------------------------------------------- */
 .skillset-card .tools-main {
 	overflow: visible;
-	/* deixa aparecer tudo */
 }
 
-/* Grid de 2 linhas que cresce para a direita */
 .skillset-card .tools-slider {
 	display: grid;
 	grid-auto-flow: column;
-	/* adiciona novas colunas, não novas linhas   */
 	grid-auto-columns: max-content;
 	grid-template-rows: repeat(2, max-content);
-	/* só 2 linhas */
 	gap: 1rem 1.5rem;
-	/* row-gap | column-gap                       */
-
-	/* desliga marquee se ainda existir           */
 	width: 100%;
 }
 
-/* zera larguras antigas */
 .skillset-card .expertise-item {
 	width: auto;
 	flex: none;
 }
 
-
-/* Soft Skills Scroller */
 .skillset-card .skills-main {
 	display: flex;
 	overflow: hidden;
@@ -1128,7 +1123,7 @@ p {
 .skillset-card .skills-slider {
 	display: flex;
 	flex-shrink: 0;
-	gap: 12px;
+	gap: var(--space-12);
 	animation: scrollXSkills 60s linear infinite;
 	align-items: center;
 }
@@ -1136,50 +1131,36 @@ p {
 .skill-item {
 	background-color: var(--background);
 	color: var(--light-black);
-	padding: 6px 14px;
-	border-radius: 20px;
-	font-size: 14px;
-	font-weight: 500;
+	padding: var(--space-6) 14px;
+	border-radius: var(--radius-20);
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
 	line-height: 1.5;
 	white-space: nowrap;
 }
 
-/* =========================================
-SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .skillset-card {
 	max-height: none;
 }
 
-/* deixa o card crescer */
-
 .skillset-card .tools-main {
 	overflow-x: hidden;
-	/* corta só o que sair pelos lados   */
 	overflow-y: visible;
-	/* libera a 2ª linha                 */
 }
 
 .skillset-card .tools-slider {
 	display: grid !important;
-	/* substitui o flex        */
 	grid-template-rows: repeat(2, auto);
-	/* exatamente 2 linhas     */
 	grid-auto-flow: column;
-	/* novas colunas à direita */
 	grid-auto-columns: max-content;
 	gap: 1rem 1.5rem;
-	/* animation: none !important;
-	mata o marquee          */
 	width: 100%;
 }
 
 .skillset-card .expertise-item {
 	flex: 0 0 auto !important;
-	/* anula encolhimento      */
 	opacity: 1 !important;
-	/* garante visibilidade    */
 }
-
 
 @keyframes scrollXSkills {
 	from {
@@ -1191,29 +1172,28 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	}
 }
 
-/* Service Category */
 .service-category {
 	background-color: var(--background);
-	padding: 24px;
-	border-radius: 16px;
+	padding: var(--space-24);
+	border-radius: var(--radius-16);
 	height: 100%;
 }
 
 .service-category .category-header {
 	display: flex;
 	align-items: center;
-	gap: 12px;
-	margin-bottom: 20px;
+	gap: var(--space-12);
+	margin-bottom: var(--space-20);
 }
 
 .service-category .category-header i {
-	font-size: 22px;
+	font-size: var(--fs-22);
 	color: var(--primary);
 }
 
 .service-category .category-header h4 {
-	font-size: 20px;
-	font-weight: 600;
+	font-size: var(--fs-20);
+	font-weight: var(--fw-600);
 	color: var(--black);
 	margin: 0;
 }
@@ -1225,10 +1205,10 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .service-category .service-list li {
 	color: var(--paragraph);
-	font-size: 16px;
+	font-size: var(--font-size);
 	padding-left: 22px;
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: var(--space-10);
 }
 
 .service-category .service-list li::before {
@@ -1237,7 +1217,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	left: 0;
 	top: 1px;
 	color: var(--primary);
-	font-weight: 900;
+	font-weight: var(--fw-900);
 }
 
 /*=============================
@@ -1253,14 +1233,14 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .card-body {
-	padding: 48px 40px 40px;
+	padding: var(--space-40) var(--space-40) var(--space-40);
 }
 
 .content-box-card .top-info {
 	display: flex;
-	gap: 40px;
+	gap: var(--space-40);
 	justify-content: space-between;
-	margin-bottom: 48px;
+	margin-bottom: var(--space-50);
 }
 
 .content-box-card .top-info .text {
@@ -1270,11 +1250,11 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .top-info .main-title {
-	font-size: 40px;
-	font-weight: 600;
+	font-size: var(--fs-40);
+	font-weight: var(--fw-600);
 	color: var(--black);
 	line-height: 0.9em;
-	margin-bottom: 24px;
+	margin-bottom: var(--space-24);
 }
 
 .content-box-card .top-info .main-title span {
@@ -1282,15 +1262,15 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .top-info p {
-	font-size: 24px;
-	font-weight: 400;
+	font-size: var(--fs-24);
+	font-weight: var(--font-weight);
 	color: var(--light-black);
 	line-height: 1.333em;
 }
 
 .content-box-card .top-info p b {
-	font-size: 24px;
-	font-weight: 600;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-600);
 	color: var(--black);
 }
 
@@ -1299,22 +1279,22 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .available-btn span {
-	font-size: 18px;
-	font-weight: 500;
+	font-size: var(--fs-18);
+	font-weight: var(--fw-500);
 	color: var(--primary);
 	background-color: var(--background);
-	padding: 8px 16px 8px 16px;
-	border-radius: 8px;
+	padding: var(--space-8) var(--space-16);
+	border-radius: var(--radius-8);
 	line-height: 1.5em;
 	display: flex;
 	align-items: center;
 }
 
 .content-box-card .available-btn .me-1 {
-	font-size: 8px;
-	margin-right: 12px;
+	font-size: var(--space-8);
+	margin-right: var(--space-12);
 	position: relative;
-	color: greenyellow;
+	color: var(--color-greenyellow);
 }
 
 .content-box-card .available-btn .me-1::after {
@@ -1325,49 +1305,49 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	width: 100%;
 	height: 100%;
 	background-color: rgba(71, 112, 255, 0.3);
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	content: "";
 	animation: live 1s ease-in-out infinite;
 }
 
 @keyframes live {
-	0% {
-		transform: translate(-50%, -50%) scale(1)
+	from {
+		transform: translate(-50%, -50%) scale(1);
 	}
 
-	100% {
+	to {
 		transform: translate(-50%, -50%) scale(2.4);
-		background-color: transparent
+		background-color: transparent;
 	}
 }
 
 .content-box-card .counter-area {
 	display: flex;
-	gap: 30px;
+	gap: var(--space-30);
 	justify-content: space-between;
-	margin-bottom: 50px;
+	margin-bottom: var(--space-50);
 }
 
 .content-box-card .counter-area .counter {
 	display: flex;
-	gap: 40px;
+	gap: var(--space-40);
 	max-width: 461px;
 	flex-grow: 1;
 }
 
 .content-box-card .counter-area .counter .counter-item .number {
-	font-size: 40px;
-	font-weight: 600;
+	font-size: var(--fs-40);
+	font-weight: var(--fw-600);
 	color: var(--black);
 	line-height: 0.9em;
 }
 
 .content-box-card .counter-area .counter .counter-item .subtitle {
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	color: var(--light-black);
 	line-height: 1.5em;
-	margin-top: 8px;
+	margin-top: var(--space-8);
 }
 
 .content-box-card .counter-area .circle-area {
@@ -1392,7 +1372,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 @keyframes spin {
 	to {
-		transform: translate(-50%, -50%) rotate(1turn)
+		transform: translate(-50%, -50%) rotate(1turn);
 	}
 }
 
@@ -1400,18 +1380,18 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	width: 70px;
 	height: 70px;
 	background-color: var(--primary);
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .content-box-card .main-common-title {
-	font-size: 30px;
-	font-weight: 500;
+	font-size: var(--fs-30);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.2em;
-	margin-bottom: 32px;
+	margin-bottom: var(--fs-32);
 }
 
 .content-box-card .working-with-area .working-with-main {
@@ -1421,7 +1401,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .working-with-area .working-with-main .items {
-	border-radius: 16px;
+	border-radius: var(--radius-16);
 	background-color: var(--background);
 	width: 80px;
 	height: 80px;
@@ -1431,41 +1411,41 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .working-with-area .working-with-main .items img {
-	width: 48px;
-	height: 48px;
+	width: var(--space-40);
+	height: var(--space-40);
 }
 
 .content-box-card .client-feedback {
-	margin-top: 50px;
+	margin-top: var(--space-50);
 }
 
 .content-box-card .client-feedback .feedback-item {
-	margin: 0 12px;
+	margin: 0 var(--space-12);
 	background-color: var(--background);
-	padding: 24px;
-	border-radius: 8px;
+	padding: var(--space-24);
+	border-radius: var(--radius-8);
 }
 
 .content-box-card .client-feedback .feedback-item .feedback-top-info {
 	display: flex;
 	align-items: center;
-	gap: 30px;
+	gap: var(--space-30);
 	justify-content: space-between;
-	margin-bottom: 20px;
+	margin-bottom: var(--space-20);
 }
 
 .content-box-card .client-feedback .feedback-item .feedback-top-info .rating i {
-	color: #FAAD3D;
-	font-size: 14px;
+	color: var(--color-rating);
+	font-size: var(--fs-14);
 }
 
 .content-box-card .client-feedback .feedback-item .feedback-top-info .website a {
 	background-color: var(--white);
-	font-size: 14px;
-	font-weight: 400;
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
 	line-height: 0.9rem;
-	padding: 4px 8px;
-	border-radius: 4px;
+	padding: var(--space-4) var(--space-8);
+	border-radius: var(--radius-4);
 }
 
 .content-box-card .client-feedback .feedback-item .feedback-top-info .website a:hover {
@@ -1483,31 +1463,31 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .client-feedback .feedback-item .details {
-	margin-bottom: 30px;
+	margin-bottom: var(--space-30);
 }
 
 .content-box-card .client-feedback .feedback-item .details p {
-	font-size: 18px;
-	font-weight: 400;
+	font-size: var(--fs-18);
+	font-weight: var(--font-weight);
 	color: var(--black);
 	line-height: 1.5em;
 }
 
 .content-box-card .client-feedback .feedback-item .designation p {
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 }
 
 .content-box-card .client-feedback .feedback-item .designation p span {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--black);
 }
 
 .content-box-card .client-feedback-slider .icon {
 	width: 36px;
 	height: 36px;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	border: 1px solid var(--border);
 	text-align: center;
 	line-height: 36px;
@@ -1534,52 +1514,52 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .awards-recognitions {
-	margin-top: 50px;
+	margin-top: var(--space-50);
 }
 
 .content-box-card .awards-recognitions ul li+li {
-	margin-top: 18px;
+	margin-top: var(--fs-18);
 }
 
 .content-box-card .awards-recognitions .awards-item {
 	background-color: var(--background);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	border: 1px solid transparent;
-	padding: 24px;
+	padding: var(--space-24);
 	display: flex;
-	gap: 20px;
+	gap: var(--space-20);
 	justify-content: space-between;
 	align-items: center;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 }
 
 .content-box-card .awards-recognitions .awards-item .award-name {
 	display: flex;
 	align-items: center;
-	gap: 24px;
+	gap: var(--space-24);
 	max-width: 300px;
 	width: 100%;
 }
 
 .content-box-card .awards-recognitions .awards-item .award-name .icon {
-	width: 40px;
-	height: 40px;
+	width: var(--space-40);
+	height: var(--space-40);
 	background-color: var(--white);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 }
 
 .content-box-card .awards-recognitions .awards-item .award-name .icon img {
-	width: 24px;
-	height: 24px;
+	width: var(--space-24);
+	height: var(--space-24);
 }
 
 .content-box-card .awards-recognitions .awards-item .award-name .text .title {
-	font-size: 18px;
-	font-weight: 500;
+	font-size: var(--fs-18);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.2em;
 }
@@ -1590,18 +1570,18 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .awards-recognitions .awards-item .winner-tag .title {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	display: flex;
 	align-items: center;
-	gap: 6px;
+	gap: var(--space-6);
 }
 
 .content-box-card .awards-recognitions .awards-item .winner-tag .title .icon {
 	stroke: var(--black);
-	width: 20px;
-	height: 20px;
+	width: var(--space-20);
+	height: var(--space-20);
 }
 
 .content-box-card .awards-recognitions .awards-item .project-btn {
@@ -1611,19 +1591,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .content-box-card .awards-recognitions .awards-item .project-btn span {
 	background-color: var(--white);
 	color: var(--black);
-	font-size: 14px;
-	font-weight: 400;
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
 	line-height: 0.9rem;
-	padding: 8px 12px;
-	border-radius: 4px;
+	padding: var(--space-8) var(--space-12);
+	border-radius: var(--radius-4);
 	border: 0;
 	flex: 0 0 auto;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 }
 
 .content-box-card .awards-recognitions .awards-item .project-btn span .arrow-up {
 	stroke: var(--black);
-	margin-left: 4px;
+	margin-left: var(--space-4);
 }
 
 .content-box-card .awards-recognitions .awards-item:hover {
@@ -1645,19 +1625,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .article-publications {
-	margin-top: 50px;
+	margin-top: var(--space-50);
 }
 
 .article-publications-item {
-	margin: 0 12px;
+	margin: 0 var(--space-12);
 }
 
 .article-publications-item .image {
 	aspect-ratio: 6/4;
 	overflow: hidden;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	position: relative;
-	margin-bottom: 24px;
+	margin-bottom: var(--space-24);
 }
 
 .article-publications-item .image a {
@@ -1669,7 +1649,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	object-position: center;
 	width: 100%;
 	height: 100%;
-	transition: all 0.5s;
+	transition: var(--transition-slow);
 }
 
 .article-publications-item .image:hover img {
@@ -1678,14 +1658,14 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .article-publications-item .image .tags {
 	background-color: var(--white);
-	font-size: 12px;
-	font-weight: 400;
+	font-size: var(--fs-12);
+	font-weight: var(--font-weight);
 	line-height: 0.9rem;
-	padding: 4px 8px;
-	border-radius: 4px;
+	padding: var(--space-4) var(--space-8);
+	border-radius: var(--radius-4);
 	position: absolute;
-	bottom: 16px;
-	left: 16px;
+	bottom: var(--space-16);
+	left: var(--space-16);
 	display: inline-block;
 	height: unset;
 }
@@ -1696,8 +1676,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .article-publications-item .text .title {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-500);
 	line-height: 1.3em;
 	color: var(--black);
 	margin-bottom: 14px;
@@ -1709,9 +1689,9 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .article-publications-item .text ul li {
 	display: inline-block;
-	font-size: 14px;
-	font-weight: 400;
-	color: rgba(87, 96, 118, 0.5);
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
+	color: var(--text-meta);
 	line-height: 1.4em;
 	position: relative;
 	padding-left: 15px;
@@ -1723,8 +1703,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	position: absolute;
 	width: 3px;
 	height: 3px;
-	background-color: rgba(87, 96, 118, 0.5);
-	border-radius: 50%;
+	background-color: var(--text-meta);
+	border-radius: var(--radius-50p);
 	content: "";
 	top: 50%;
 	left: 0;
@@ -1734,7 +1714,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .content-box-card .article-publications-slider .icon {
 	width: 36px;
 	height: 36px;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	border: 1px solid var(--border);
 	text-align: center;
 	line-height: 36px;
@@ -1762,24 +1742,24 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .content-box-card .work-together-slider {
 	background-color: var(--background);
-	border-radius: 8px;
-	padding: 24px;
+	border-radius: var(--radius-8);
+	padding: var(--space-24);
 	overflow: hidden;
-	margin-top: 50px;
+	margin-top: var(--space-50);
 }
 
 .content-box-card .work-together-slider .slider-main .slider-item {
 	display: flex;
 	white-space: nowrap;
 	animation: scroll 20s linear infinite;
-	gap: 24px;
+	gap: var(--space-24);
 	align-items: center;
 }
 
 .content-box-card .work-together-slider a {
 	display: inline-block;
-	font-size: 40px;
-	font-weight: 500;
+	font-size: var(--fs-40);
+	font-weight: var(--fw-500);
 	color: var(--light-black);
 	line-height: 0.9em;
 	position: relative;
@@ -1788,10 +1768,10 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .content-box-card .work-together-slider a::before {
 	position: absolute;
-	width: 10px;
-	height: 10px;
+	width: var(--space-10);
+	height: var(--space-10);
 	background-color: var(--light-black);
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	content: "";
 	top: 50%;
 	left: -32px;
@@ -1807,22 +1787,21 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 @keyframes scroll {
-	0% {
-		transform: translateX(0)
+	from {
+		transform: translateX(0);
 	}
 
 	to {
-		transform: translateX(calc(-100% - 1.5rem))
+		transform: translateX(calc(-100% - 1.5rem));
 	}
 }
 
-/* CV Section (Education & Experience) */
 .cv-item {
 	border: 1px solid var(--border);
-	padding: 24px;
-	border-radius: 16px;
+	padding: var(--space-24);
+	border-radius: var(--radius-16);
 	background-color: var(--white);
-	transition: all 0.3s ease-in-out;
+	transition: var(--transition-medium);
 	height: 100%;
 }
 
@@ -1833,7 +1812,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .cv-item h3 {
 	font-size: 1.4rem;
-	font-weight: 600;
+	font-weight: var(--fw-600);
 	color: var(--black);
 	margin-bottom: 1.25rem !important;
 }
@@ -1841,7 +1820,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .cv-item h4 {
 	color: var(--primary);
 	font-size: 1.1rem;
-	font-weight: 600;
+	font-weight: var(--fw-600);
 	margin-bottom: 0.1rem;
 }
 
@@ -1855,7 +1834,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .cv-item p,
 .cv-item li {
 	margin-bottom: 0;
-	font-size: 15px;
+	font-size: var(--fs-15);
 	color: var(--paragraph);
 }
 
@@ -1872,7 +1851,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .cv-item .experience-entry li {
 	position: relative;
 	padding-left: 18px;
-	margin-bottom: 4px;
+	margin-bottom: var(--space-4);
 }
 
 .cv-item .experience-entry li::before {
@@ -1882,7 +1861,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	color: var(--primary);
 }
 
-/* Scrollable Box for Experience */
 .scrollable-box {
 	max-height: 400px;
 	overflow-y: auto;
@@ -1890,20 +1868,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .scrollable-box::-webkit-scrollbar {
-	width: 6px;
+	width: var(--space-6);
 }
 
 .scrollable-box::-webkit-scrollbar-track {
 	background: var(--background);
-	border-radius: 10px;
+	border-radius: var(--radius-10);
 }
 
 .scrollable-box::-webkit-scrollbar-thumb {
 	background-color: #d3d3d3;
-	border-radius: 10px;
+	border-radius: var(--radius-10);
 }
 
-/* Language Skills Section */
 .language-skill {
 	margin-bottom: 1.5rem;
 }
@@ -1912,29 +1889,28 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 5px;
-	font-weight: 600;
+	font-weight: var(--fw-600);
 	color: var(--black);
 }
 
 .language-skill .skill-info span:last-child {
 	color: var(--light-black);
-	font-weight: 500;
+	font-weight: var(--fw-500);
 }
 
 .progress {
-	height: 8px;
+	height: var(--space-8);
 	background-color: var(--background);
-	border-radius: 5px;
+	border-radius: var(--radius-5);
 	overflow: hidden;
 }
 
 .progress-bar {
 	background-color: var(--primary);
 	height: 100%;
-	border-radius: 5px;
+	border-radius: var(--radius-5);
 }
 
-/* Skills & Hobbies Sections */
 .skills-list {
 	list-style-type: none;
 	padding-left: 0;
@@ -1943,7 +1919,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .skills-list li {
 	position: relative;
 	padding-left: 22px;
-	margin-bottom: 10px;
+	margin-bottom: var(--space-10);
 	color: var(--paragraph);
 }
 
@@ -1952,13 +1928,13 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	position: absolute;
 	left: 0;
 	color: var(--primary);
-	font-weight: 900;
+	font-weight: var(--fw-900);
 }
 
 .hobbies-container {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
+	gap: var(--space-8);
 	margin-top: 1rem;
 }
 
@@ -1966,26 +1942,26 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
  * 06. services page CSS STart
 ===============================*/
 .services {
-	margin-bottom: 50px;
+	margin-bottom: var(--space-50);
 	margin-top: 60px;
 }
 
 .services .block-image {
-	margin: 50px 0;
+	margin: var(--space-50) 0;
 	margin-top: 56px;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	aspect-ratio: 16 / 9;
 	overflow: hidden;
 }
 
 .services .block-image img {
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	object-fit: cover;
 	height: 100%;
 }
 
 .content-box-card .frequently-asked-questions {
-	margin-top: 50px;
+	margin-top: var(--space-50);
 }
 
 .content-box-card .frequently-asked-questions .accordion-button:focus {
@@ -1994,29 +1970,28 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .content-box-card .frequently-asked-questions .accordion-item {
 	border: 0;
-	margin: 16px 0;
+	margin: var(--space-16) 0;
 	border: 1px solid var(--border);
-	border-radius: 8px !important;
+	border-radius: var(--radius-8) !important;
 }
 
 .content-box-card .frequently-asked-questions .accordion-button {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-500);
 	color: var(--black);
-	background-color: transparent;
 	background-color: var(--background);
-	padding: 24px;
-	border-radius: 8px;
+	padding: var(--space-24);
+	border-radius: var(--radius-8);
 }
 
 .content-box-card .frequently-asked-questions .accordion-body {
-	padding: 24px;
+	padding: var(--space-24);
 	padding-top: 0;
 }
 
 .content-box-card .frequently-asked-questions .accordion-body p {
-	font-size: 18px;
-	font-weight: 400;
+	font-size: var(--fs-18);
+	font-weight: var(--font-weight);
 	line-height: 1.5em;
 	color: var(--black);
 }
@@ -2032,10 +2007,10 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .content-box-card .frequently-asked-questions .accordion-button .icon {
-	width: 32px;
-	height: 32px;
+	width: var(--fs-32);
+	height: var(--fs-32);
 	background-color: var(--white);
-	border-radius: 4px;
+	border-radius: var(--radius-4);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -2070,22 +2045,22 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-card .top-info .text p {
-	font-size: 18px;
-	font-weight: 400;
+	font-size: var(--fs-18);
+	font-weight: var(--font-weight);
 	line-height: 1.5em;
 }
 
 .portfolio-area .portfolio-item .image {
-	padding: 40px;
+	padding: var(--space-40);
 	padding-bottom: 0;
 	background-color: var(--background);
-	border-radius: 16px;
+	border-radius: var(--radius-16);
 	position: relative;
 	aspect-ratio: 1 / 1;
 }
 
 .portfolio-area .portfolio-item .image img {
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 	aspect-ratio: 1 / 1;
@@ -2097,23 +2072,23 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	left: 50%;
 	transform: translate(-50%);
 	z-index: 9;
-	width: 40px;
-	height: 40px;
+	width: var(--space-40);
+	height: var(--space-40);
 	background-color: var(--white);
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	text-align: center;
 	line-height: 38px;
 	color: var(--primary);
-	filter: drop-shadow(0 12px 12px rgba(26, 31, 44, 0.25));
+	filter: drop-shadow(0 12px 12px var(--shadow-main));
 	margin-top: -10px;
-	transition: var(--transision);
+	transition: var(--transition-fast);
 	visibility: hidden;
 	opacity: 0;
 }
 
 .portfolio-area .portfolio-item .image .full-image-preview .icon {
-	width: 22px;
-	height: 22px;
+	width: var(--fs-22);
+	height: var(--fs-22);
 }
 
 .portfolio-area .portfolio-item .image:hover .full-image-preview {
@@ -2123,14 +2098,14 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .portfolio-area .portfolio-item .text {
 	display: flex;
-	gap: 30px;
+	gap: var(--space-30);
 	justify-content: space-between;
-	padding: 24px;
+	padding: var(--space-24);
 }
 
 .portfolio-area .portfolio-item .text .info .title {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.3em;
 	border-bottom: 1px solid transparent;
@@ -2143,15 +2118,15 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-area .portfolio-item .text .info .subtitle {
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	line-height: 1.5em;
 	color: var(--light-black);
 }
 
 .portfolio-area .portfolio-item .text .visite-btn a {
-	font-size: 14px;
-	font-weight: 400;
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
 	line-height: 1em;
 	color: var(--light-black);
 }
@@ -2161,30 +2136,22 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	margin-left: 2px;
 }
 
-.portfolio-area .portfolio-item .text .visite-btn a:hover {
-	color: var(--primary);
-}
-
+.portfolio-area .portfolio-item .text .visite-btn a:hover,
 .portfolio-area .portfolio-item .text .visite-btn a:hover .arrow-up {
+	color: var(--primary);
 	stroke: var(--primary);
 }
 
-
-/* --- Gallery tweaks ----------------------------------- */
 .portfolio-area .portfolio-item {
 	height: 100%;
-	/* cards stretch to same height */
 	display: flex;
 	flex-direction: column;
 }
 
 .portfolio-area .portfolio-item .image {
 	padding: 0;
-	/* remove big white gutter */
 	aspect-ratio: 1 / 1;
-	/* perfect square */
-	border-radius: 16px 16px 0 0;
-	/* keep rounded top */
+	border-radius: var(--radius-16) var(--radius-16) 0 0;
 	overflow: hidden;
 }
 
@@ -2192,17 +2159,12 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* crops nicely */
 }
 
-
-/* Portfolio Details Area */
 .portfolio-details-area .main-image {
-	border-radius: 10px;
+	border-radius: var(--radius-10);
 	overflow: hidden;
 }
-
-
 
 .portfolio-details-area .main-image img {
 	width: 100%;
@@ -2210,9 +2172,9 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .portfolio-details-text {
 	display: flex;
-	column-gap: 40px;
+	column-gap: var(--space-40);
 	justify-content: space-between;
-	margin-top: 32px;
+	margin-top: var(--fs-32);
 }
 
 .portfolio-details-text .short-info {
@@ -2221,19 +2183,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-details-text .short-info .info-item+.info-item {
-	margin-top: 18px;
+	margin-top: var(--fs-18);
 }
 
 .portfolio-details-text .short-info .info-item .subtitle {
-	font-size: 14px;
-	font-weight: 500;
-	margin: 10px auto;
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
+	margin: var(--space-10) auto;
 	color: var(--light-black);
 }
 
 .portfolio-details-text .short-info .info-item .website {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--primary);
 	margin-bottom: 5px;
 }
@@ -2243,9 +2205,9 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-details-text .overview p {
-	font-size: 15px;
-	font-weight: 400;
-	margin-bottom: 18px;
+	font-size: var(--fs-15);
+	font-weight: var(--font-weight);
+	margin-bottom: var(--fs-18);
 }
 
 .portfolio-details-text .overview p b {
@@ -2253,39 +2215,35 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-details-area .inner-images {
-	margin: 16px 0;
-	margin-bottom: 22px;
+	margin: var(--space-16) 0 var(--fs-22);
 }
 
-.portfolio-details-area .inner-images .image-item {
-	border-radius: 8px;
+.portfolio-details-area .inner-images .image-item,
+.portfolio-details-area .inner-images .image-item img {
+	border-radius: var(--radius-8);
 	overflow: hidden;
 }
 
-.portfolio-details-area .inner-images .image-item img {
-	border-radius: 8px;
-}
-
 .portfolio-details-area .more-info-block .more-info-title {
-	font-size: 32px;
-	font-weight: 500;
+	font-size: var(--fs-32);
+	font-weight: var(--fw-500);
 	line-height: 1.5em;
-	margin: 20px 0;
+	margin: var(--space-20) 0;
 }
 
 .portfolio-details-area .more-info-block p {
-	font-size: 15px;
-	font-weight: 400;
-	margin-bottom: 20px;
+	font-size: var(--fs-15);
+	font-weight: var(--font-weight);
+	margin-bottom: var(--space-20);
 }
 
 .portfolio-details-area .more-info-block ul {
-	margin-bottom: 20px;
+	margin-bottom: var(--space-20);
 }
 
 .portfolio-details-area .more-info-block ul li {
-	font-size: 15px;
-	font-weight: 400;
+	font-size: var(--fs-15);
+	font-weight: var(--font-weight);
 	color: var(--paragraph);
 }
 
@@ -2294,14 +2252,14 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .portfolio-details-area .more-info-block .more-info-subtitle {
-	font-size: 18px;
-	font-weight: 500;
-	margin-bottom: 8px;
+	font-size: var(--fs-18);
+	font-weight: var(--fw-500);
+	margin-bottom: var(--space-8);
 }
 
 .portfolio-details-area .prev-and-next-btn {
 	display: flex;
-	column-gap: 40px;
+	column-gap: var(--space-40);
 	margin-top: 35px;
 }
 
@@ -2312,8 +2270,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 24px;
-	font-weight: 500;
+	font-size: var(--fs-24);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	width: 50%;
 }
@@ -2333,34 +2291,34 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .article-area .article-publications-item {
 	margin: 0 !important;
-	margin-top: 40px !important;
+	margin-top: var(--space-40) !important;
 }
 
 .article-details-area .main-image {
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	aspect-ratio: 16 / 9;
 	overflow: hidden;
 }
 
 .article-details-area .main-image img {
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	object-fit: cover;
 	height: 100%;
 }
 
 .article-details-card {
-	padding-top: 40px !important;
+	padding-top: var(--space-40) !important;
 }
 
 .article-details-area .article-tags {
-	margin-top: 12px;
+	margin-top: var(--space-12);
 }
 
 .article-details-area .article-tags li {
 	display: inline-block;
-	font-size: 14px;
-	font-weight: 400;
-	color: rgba(87, 96, 118, 0.5);
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
+	color: var(--text-meta);
 	line-height: 1.4em;
 	position: relative;
 	padding-left: 15px;
@@ -2372,8 +2330,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	position: absolute;
 	width: 3px;
 	height: 3px;
-	background-color: rgba(87, 96, 118, 0.5);
-	border-radius: 50%;
+	background-color: var(--text-meta);
+	border-radius: var(--radius-50p);
 	content: "";
 	top: 50%;
 	left: 0;
@@ -2381,38 +2339,38 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .article-details-area .article-details-text {
-	margin-top: 40px;
+	margin-top: var(--space-40);
 }
 
 .article-details-area .article-details-text .main-title {
-	font-size: 30px;
-	font-weight: 500;
+	font-size: var(--fs-30);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.2em;
-	margin-bottom: 32px;
+	margin-bottom: var(--fs-32);
 }
 
 .article-details-area .article-details-text p {
-	font-size: 18px;
-	font-weight: 400;
+	font-size: var(--fs-18);
+	font-weight: var(--font-weight);
 	line-height: 1.7em;
 	margin-bottom: 25px;
 }
 
 .article-details-area .article-details-text blockquote {
 	border-left: 4px solid var(--primary);
-	padding-left: 20px;
+	padding-left: var(--space-20);
 }
 
 .article-details-area .article-details-text blockquote p {
-	font-size: 18px;
-	font-weight: 500;
+	font-size: var(--fs-18);
+	font-weight: var(--fw-500);
 	font-style: italic;
 	color: var(--black);
 }
 
 .article-details-area .article-details-text .inner-title {
-	margin-top: 40px;
+	margin-top: var(--space-40);
 }
 
 .article-details-area .article-details-text .listed-info {
@@ -2420,8 +2378,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .article-details-area .article-details-text .listed-info li {
-	font-size: 18px;
-	font-weight: 400;
+	font-size: var(--fs-18);
+	font-weight: var(--font-weight);
 	line-height: 1.7em;
 	position: relative;
 	padding-left: 28px;
@@ -2430,10 +2388,10 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .article-details-area .article-details-text .listed-info li::before {
 	position: absolute;
-	width: 6px;
-	height: 6px;
+	width: var(--space-6);
+	height: var(--space-6);
 	background-color: #D1D5DB;
-	border-radius: 50%;
+	border-radius: var(--radius-50p);
 	content: "";
 	top: 12px;
 	left: 0;
@@ -2442,39 +2400,39 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .article-details-area .article-details-text .tags-and-share {
 	display: flex;
 	justify-content: space-between;
-	gap: 30px;
+	gap: var(--space-30);
 	align-items: center;
-	margin-top: 30px;
+	margin-top: var(--space-30);
 	margin-bottom: 60px;
 }
 
 .article-details-area .article-details-text .tags-and-share .tags {
 	display: flex;
-	gap: 22px;
+	gap: var(--fs-22);
 	align-items: center;
 }
 
 .article-details-area .article-details-text .tags-and-share .title {
-	font-size: 18px;
-	font-weight: 500;
+	font-size: var(--fs-18);
+	font-weight: var(--fw-500);
 	color: var(--black);
 	line-height: 1.5em;
 }
 
 .article-details-area .article-details-text .tags-and-share .tags ul li {
 	display: inline-block;
-	margin-right: 4px;
+	margin-right: var(--space-4);
 }
 
 .article-details-area .article-details-text .tags-and-share .tags ul li a {
 	background-color: var(--white);
 	border: 1px solid var(--border);
-	font-size: 12px;
-	font-weight: 400;
+	font-size: var(--fs-12);
+	font-weight: var(--font-weight);
 	line-height: 0.9rem;
-	padding: 4px 8px;
+	padding: var(--space-4) var(--space-8);
 	color: var(--black);
-	border-radius: 4px;
+	border-radius: var(--radius-4);
 }
 
 .article-details-area .article-details-text .tags-and-share .tags ul li a:hover {
@@ -2485,7 +2443,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .article-details-area .article-details-text .tags-and-share .share {
 	display: flex;
-	gap: 22px;
+	gap: var(--fs-22);
 	align-items: center;
 }
 
@@ -2499,22 +2457,22 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .leave-comments-area .comments-box {
 	background-color: var(--background);
-	padding: 50px;
-	border-radius: 8px;
+	padding: var(--space-50);
+	border-radius: var(--radius-8);
 }
 
 .leave-comments-area .comments-box .form-label {
-	font-size: 14px;
-	font-weight: 500;
+	font-size: var(--fs-14);
+	font-weight: var(--fw-500);
 	line-height: 1.4em;
 }
 
 .leave-comments-area .comments-box .form-control {
-	border-radius: 8px;
-	padding: 16px 24px;
+	border-radius: var(--radius-8);
+	padding: var(--space-16) var(--space-24);
 	border: 1px solid var(--border);
-	font-size: 16px;
-	font-weight: 400;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
 	color: var(--light-black);
 }
 
@@ -2523,31 +2481,31 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .leave-comments-area .comments-box .submit-btn {
-	font-size: 16px;
-	font-weight: 500;
+	font-size: var(--font-size);
+	font-weight: var(--fw-500);
 	color: var(--white);
 	background-color: var(--primary);
-	padding: 16px 24px;
+	padding: var(--space-16) var(--space-24);
 	width: 100%;
 	border: 0;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 }
 
 .leave-comments-area .comments-box .submit-btn:hover {
-	background-color: #2563EB;
+	background-color: var(--primary);
 }
 
 .leave-comments-area .comments-box .submit-btn .icon {
 	stroke: var(--white);
-	margin-left: 4px;
+	margin-left: var(--space-4);
 }
 
 /*=============================
  * 09. Contact page CSS Start
 ===============================*/
 .leave-comments-area .comments-box .form-select {
-	border-radius: 8px;
-	padding: 16px 24px;
+	border-radius: var(--radius-8);
+	padding: var(--space-16) var(--space-24);
 	border: 1px solid var(--border);
 }
 
@@ -2557,7 +2515,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .contact-map-area {
 	aspect-ratio: 16/9;
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	overflow: hidden;
 	margin-top: 56px;
 }
@@ -2571,12 +2529,12 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
  * 10. Footer CSS Start
 ===============================*/
 .footer-area {
-	padding-top: 24px;
+	padding-top: var(--space-24);
 }
 
 .footer-area .text p {
-	font-size: 14px;
-	font-weight: 400;
+	font-size: var(--fs-14);
+	font-weight: var(--font-weight);
 	color: var(--black);
 	line-height: 1.257em;
 }
@@ -2665,7 +2623,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .common-button-groups .btn.btn-copy:hover {
-	background-color: #1A1F2C;
+	background-color: var(--black);
 	color: var(--white);
 }
 
@@ -2755,10 +2713,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	color: var(--dark-theme-light-white);
 }
 
-.dark-theme .content-box-card .top-info p {
-	color: var(--dark-theme-light-white);
-}
-
 .dark-theme .content-box-card .top-info p b {
 	color: var(--white);
 }
@@ -2780,13 +2734,13 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .content-box-card .client-feedback .feedback-item .top-info .website a {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .client-feedback-slider .icon {
 	border-color: var(--black);
 	color: var(--light-black);
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .client-feedback-slider .icon:hover {
@@ -2807,12 +2761,12 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item:hover {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 	border-color: var(--primary);
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item .award-name .icon {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item:hover .icon {
@@ -2820,12 +2774,12 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item .project-btn span {
-	background-color: #000;
-	color: rgba(240, 242, 245, .7);
+	background-color: var(--dark-theme-bg);
+	color: var(--dark-theme-light-white);
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item .project-btn span .arrow-up {
-	stroke: rgba(240, 242, 245, .7);
+	stroke: var(--dark-theme-light-white);
 }
 
 .dark-theme .content-box-card .awards-recognitions .awards-item:hover .project-btn span {
@@ -2852,7 +2806,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .dark-theme .content-box-card .article-publications-slider .icon {
 	border-color: var(--black);
 	color: var(--light-black);
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .article-publications-slider .icon:hover {
@@ -2881,7 +2835,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .content-box-card .work-together-slider a:hover {
-	color: var(--white)
+	color: var(--white);
 }
 
 .dark-theme .content-box-card .available-btn span i::after {
@@ -2894,19 +2848,16 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .content-box-card .frequently-asked-questions .accordion-button:hover {
-	color: var(--dark-theme-white)
+	color: var(--dark-theme-white);
 }
 
 .dark-theme .content-box-card .frequently-asked-questions .accordion-button .icon {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .frequently-asked-questions .accordion-item {
 	border: 1px solid var(--dark-theme-black);
-}
-
-.dark-theme .content-box-card .frequently-asked-questions .accordion-item {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .content-box-card .frequently-asked-questions .accordion-button:not(.collapsed) {
@@ -2945,7 +2896,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .dark-theme .pagination ul li button {
 	border-color: var(--black);
 	color: var(--light-black);
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .pagination ul li button:hover {
@@ -2970,30 +2921,28 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .leave-comments-area .comments-box .form-control {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 	border-color: var(--black);
 	color: var(--white);
 }
 
 .dark-theme .leave-comments-area .comments-box .form-select {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 	border-color: var(--black);
 	color: var(--dark-theme-light-white);
 }
 
 .dark-theme .navbar .navbar-main {
-	background-color: #000;
+	background-color: var(--dark-theme-bg);
 }
 
 .dark-theme .header-area .mobile-menu-control-bar .mobile-menu-control-bar {
 	color: var(--dark-theme-light-white);
 }
 
-.dark-theme .article-details-area .article-tags li {
-	color: var(--light-black);
-}
-
+.dark-theme .article-details-area .article-tags li,
 .dark-theme .article-details-area .article-tags li::before {
+	color: var(--light-black);
 	background-color: var(--light-black);
 }
 
@@ -3033,31 +2982,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	color: var(--white);
 }
 
-.dark-theme .portfolio-details-text .overview p {
-	color: var(--dark-theme-light-white);
-}
-
-.dark-theme .portfolio-details-text .overview p b {
-	color: var(--dark-theme-white);
-}
-
-.dark-theme .portfolio-details-area .more-info-block p {
-	color: var(--dark-theme-light-white);
-}
-
-.dark-theme .portfolio-details-area .more-info-block .more-info-title {
-	color: var(--dark-theme-white);
-}
-
-.dark-theme .portfolio-details-area .more-info-block .more-info-subtitle {
-	color: var(--dark-theme-white);
-}
-
+.dark-theme .portfolio-details-text .overview p,
+.dark-theme .portfolio-details-area .more-info-block p,
 .dark-theme .portfolio-details-area .more-info-block ul li {
 	color: var(--dark-theme-light-white);
 }
 
+.dark-theme .portfolio-details-text .overview p b,
 .dark-theme .portfolio-details-area .more-info-block ul li b {
+	color: var(--dark-theme-white);
+}
+
+.dark-theme .portfolio-details-area .more-info-block .more-info-title,
+.dark-theme .portfolio-details-area .more-info-block .more-info-subtitle {
 	color: var(--dark-theme-white);
 }
 
@@ -3080,7 +3017,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	background-color: var(--dark-theme-black);
 }
 
-.dark-theme .timeline-card .timeline-item .date p {
+.dark-theme .timeline-card .timeline-item .date p,
+.dark-theme .timeline-card .timeline-item .info .details li {
 	color: var(--dark-theme-light-white);
 }
 
@@ -3090,10 +3028,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .dark-theme .timeline-card .timeline-item .info .subtitle {
 	color: var(--primary);
-}
-
-.dark-theme .timeline-card .timeline-item .info .details li {
-	color: var(--dark-theme-light-white);
 }
 
 .dark-theme .timeline-card .timeline-main::-webkit-scrollbar-track {
@@ -3111,8 +3045,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .dark-theme .skills-main {
 	border-top-color: var(--dark-theme-black);
 }
-
-
 
 .dark-theme .service-category {
 	background-color: var(--dark-theme-black);
@@ -3150,11 +3082,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	border-top-color: var(--dark-theme-black);
 }
 
-.dark-theme .skillset-card .skill-item {
-	background-color: var(--dark-theme-black);
-	color: var(--dark-theme-light-white);
-}
-
 .dark-theme .skill-item {
 	background-color: var(--dark-theme-black);
 	color: var(--dark-theme-light-white);
@@ -3167,8 +3094,6 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 /*====================================
  * 12. Custom About Page CSS Start
 ======================================*/
-
-/* Dark Theme Adjustments for CV, Languages, Skills & Hobbies */
 .dark-theme .cv-item {
 	border-color: var(--dark-theme-black);
 	background-color: var(--dark-theme-bg);
@@ -3183,7 +3108,9 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 }
 
 .dark-theme .cv-item p,
-.dark-theme .cv-item li {
+.dark-theme .cv-item li,
+.dark-theme .skills-list li,
+.dark-theme .language-skill .skill-info span:last-child {
 	color: var(--dark-theme-light-white);
 }
 
@@ -3191,24 +3118,13 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 	color: #94a3b8;
 }
 
-.dark-theme .skills-list li {
-	color: var(--dark-theme-light-white);
-}
-
 .dark-theme .language-skill .skill-info {
 	color: var(--dark-theme-white);
 }
 
-.dark-theme .language-skill .skill-info span:last-child {
-	color: var(--dark-theme-light-white);
-}
-
-.dark-theme .progress {
-	background-color: var(--dark-theme-black);
-}
-
+.dark-theme .progress,
 .dark-theme .scrollable-box::-webkit-scrollbar-track {
-	background: var(--dark-theme-black);
+	background-color: var(--dark-theme-black);
 }
 
 .dark-theme .scrollable-box::-webkit-scrollbar-thumb {
@@ -3228,20 +3144,19 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .personal-stats span {
 	display: flex;
 	align-items: center;
-	font-size: 15px;
-	font-weight: 500;
+	font-size: var(--fs-15);
+	font-weight: var(--fw-500);
 	color: var(--light-black);
 }
 
 .personal-stats span i {
 	color: var(--primary);
-	font-size: 16px;
-	margin-right: 8px;
-	width: 20px;
+	font-size: var(--font-size);
+	margin-right: var(--space-8);
+	width: var(--space-20);
 	text-align: center;
 }
 
-/* Dark Theme for Personal Stats */
 .dark-theme .personal-stats span {
 	color: var(--dark-theme-light-white);
 }
@@ -3251,9 +3166,9 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 ======================================*/
 .portfolio-area .portfolio-item {
 	background-color: var(--white);
-	border-radius: 16px;
+	border-radius: var(--radius-16);
 	border: 1px solid var(--border);
-	transition: all 0.3s ease-in-out;
+	transition: var(--transition-medium);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -3263,27 +3178,26 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .portfolio-area .portfolio-item:hover {
 	transform: translateY(-5px);
 	border-color: var(--primary);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--shadow-hover);
 }
 
 .portfolio-area .portfolio-item .image {
-	padding: 24px 24px 0;
+	padding: var(--space-24) var(--space-24) 0;
 	background-color: var(--background);
-	border-radius: 8px 8px 0 0;
+	border-radius: var(--radius-8) var(--radius-8) 0 0;
 }
 
 .portfolio-area .portfolio-item .image img {
-	border-radius: 8px 8px 0 0;
+	border-radius: var(--radius-8) var(--radius-8) 0 0;
 }
 
 .portfolio-area .portfolio-item .text {
-	padding: 24px;
+	padding: var(--space-24);
 	background-color: var(--white);
-	border-radius: 0 0 16px 16px;
+	border-radius: 0 0 var(--radius-16) var(--radius-16);
 	flex-grow: 1;
 }
 
-/* Dark Theme for Portfolio Hover Effects */
 .dark-theme .portfolio-area .portfolio-item {
 	background-color: var(--dark-theme-bg);
 	border-color: var(--dark-theme-black);
@@ -3291,7 +3205,7 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 
 .dark-theme .portfolio-area .portfolio-item:hover {
 	border-color: var(--primary);
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	box-shadow: var(--shadow-dark-hover);
 }
 
 .dark-theme .portfolio-area .portfolio-item .image {
@@ -3301,6 +3215,8 @@ SKILL ICONS → grid de 2 linhas fixas=======================================*/
 .dark-theme .portfolio-area .portfolio-item .text {
 	background-color: var(--dark-theme-bg);
 }
+
+
 
 /*=============================
  * Media Queries

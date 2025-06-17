@@ -32,21 +32,21 @@ export default function ProjectsCard() {
             >
               <path
                 d="M4.16699 10H15.8337"
-                stroke="#4770FF"
+                stroke="#ff4c82"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M10.833 15L15.833 10"
-                stroke="#4770FF"
+                stroke="#ff4c82"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M10.833 5L15.833 10"
-                stroke="#4770FF"
+                stroke="#ff4c82"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -81,9 +81,9 @@ export default function ProjectsCard() {
                       <path d="M10 4.167v11.666M4.167 10h11.666" />
                     </svg>
                   </a>
-                  <div className="info">
+                  {/* <div className="info">
                     <span className="category">Product Design</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -112,9 +112,9 @@ export default function ProjectsCard() {
                       <path d="M10 4.167v11.666M4.167 10h11.666" />
                     </svg>
                   </a>
-                  <div className="info">
+                  {/* <div className="info">
                     <span className="category">Product Design</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

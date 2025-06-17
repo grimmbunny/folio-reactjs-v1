@@ -9,6 +9,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TimelineCard from "../components/TimelineCard";
 import ProjectsCard from "../components/ProjectsCard";
+
+import SkillsetCard from "../components/SkillsetCard";
 // import portfolioItems from "../components/PortfolioItem";
 
 export default function Home() {
@@ -25,119 +27,7 @@ export default function Home() {
                 {/* TIMELINE */}
                 <TimelineCard />
                 {/* SKILLSET */}
-                <div className="card skillset-card">
-                  <div className="card-body">
-                    <h3 className="card-title">Skillset</h3>
-                    {/* TOOLS */}
-                    <div className="tools-main mt-24">
-                      <div className="tools-slider gap-4">
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/photoshop.svg"
-                              alt="Photoshop"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Photoshop</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/indesign.svg"
-                              alt="InDesign"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">InDesign</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/illustrator.svg"
-                              alt="Illustrator"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Illustrator</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/adobe.svg" alt="Adobe" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Adobe</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/figma.svg" alt="Figma" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Figma</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/css.svg" alt="CSS3" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">CSS</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/html.svg" alt="HTML5" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">HTML</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/javascript.svg"
-                              alt="JavaScript"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">JavaScript</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/bootstrap.svg"
-                              alt="Bootstrap"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Bootstrap</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/react.svg" alt="React" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">React</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img
-                              src="assets/img/icons/github.svg"
-                              alt="GitHub"
-                            />
-                          </div>
-                          <h4 className="title fs-6 mb-0">GitHub</h4>
-                        </div>
-                        <div className="expertise-item text-center">
-                          <div className="image mb-2">
-                            <img src="assets/img/icons/vite.svg" alt="Vite" />
-                          </div>
-                          <h4 className="title fs-6 mb-0">Vite</h4>
-                        </div>
-                      </div>
-                    </div>
-                    {/* SOFT SKILLS */}
-                    <div className="skills-main mt-4">
-                      <div className="skills-slider d-flex flex-wrap gap-2">
-                        <span className="skill-item badge ">multitasking</span>
-                        <span className="skill-item badge ">autonomia</span>
-                        <span className="skill-item badge ">visão 360º</span>
-                        <span className="skill-item badge ">flexibilidade</span>
-                        <span className="skill-item badge ">tech fluency</span>
-                        <span className="skill-item badge  ">
-                          growth mindset
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <SkillsetCard />
               </div>
               <div className="col-xl-4">
                 <ProjectsCard />
@@ -162,21 +52,21 @@ export default function Home() {
                           >
                             <path
                               d="M4.16699 10H15.8337"
-                              stroke="#4770FF"
+                              stroke="#ff4c82"
                               strokeWidth="1.5"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             />
                             <path
                               d="M10.833 15L15.833 10"
-                              stroke="#4770FF"
+                              stroke="#ff4c82"
                               strokeWidth="1.5"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             />
                             <path
                               d="M10.833 5L15.833 10"
-                              stroke="#4770FF"
+                              stroke="#ff4c82"
                               strokeWidth="1.5"
                               strokeLinecap="round"
                               strokeLinejoin="round"
