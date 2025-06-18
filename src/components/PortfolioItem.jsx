@@ -12,8 +12,17 @@ const portfolioItems = [
     // miniaturas internas
     innerImages: [],
     clientFor: "Personal Project",
-    services: ["HTML", "CSS", "JavaScript (Vanilla)", "LocalStorage", "Vercel"], // Atualizado
+    services: [
+      "Figma",
+      "HTML",
+      "CSS",
+      "JavaScript (Vanilla)",
+      "LocalStorage",
+      "Vercel",
+    ], // Atualizado
     website: "https://webapp-tamatask.vercel.app/",
+    website2:
+      "https://www.figma.com/design/cuYmLcbbvLbRUia7pP7JuY/tama-webapp?t=6NaXfWLnb5jb9b3M-1",
     // array de parágrafos
     overview: [
       "O projeto é uma aplicação web chamada TamaTask WebApp que combina gerenciador de tarefas, temporizador Pomodoro e um mascote virtual. A interface é inspirada em um Tamagotchi: o usuário pode alimentar, dar carinho e fazer o pet dormir, acumulando pontos de experiência (XP) e subindo de nível.",
@@ -71,7 +80,7 @@ const portfolioItems = [
     slug: "design-social",
     title: "Trabalhos de design - Social Media",
     categories: ["Design"],
-    img: "https://i.imgur.com/Qe3aCI0.jpg",
+    img: "./assets/img/images/socialmediacover.png",
     website: "/portfolio/design-social",
     services: [],
   },

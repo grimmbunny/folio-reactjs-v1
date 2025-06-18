@@ -96,6 +96,39 @@ export default function PortfolioDetails() {
                                 />
                               </svg>
                             </a>
+                            <p></p>
+
+                            <a
+                              href={item.website2}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="website d-inline-flex align-items-center mf-3"
+                            >
+                              Figma design
+                              <svg
+                                className="ms-1"
+                                width={14}
+                                height={15}
+                                viewBox="0 0 14 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9.91634 4.5835L4.08301 10.4168"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                                <path
+                                  d="M4.66699 4.5835H9.91699V9.8335"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            </a>
                           </div>
                         </div>
 
