@@ -7,8 +7,9 @@ import ProfileCard from '../components/ProfileCard';
 import { FaWhatsapp, FaRegEnvelope } from 'react-icons/fa';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import TimelineCard from '../components/TimelineCard';
-import ProjectsCard from '../components/ProjectsCard';
+// import TimelineCard from '../components/TimelineCard'; // Não vamos mais usar
+import ProjectsCard from '../components/ProjectsCard'; // O original (estático)
+import AllProjectsCard from '../components/AllProjectsCard'; // O NOVO (com scroll)
 
 import SkillsetCard from '../components/SkillsetCard';
 // import portfolioItems from "../components/PortfolioItem";
@@ -23,13 +24,14 @@ export default function Home() {
 					<div className='container'>
 						<div className='row g-4'>
 							<ProfileCard />
-							<div className='col-xl-4'>
-								{/* TIMELINE */}
-								<TimelineCard />
+							<div className='col-xl-4 column-shrink-height'>
+								{/* --- AQUI ESTÁ O NOVO CARD --- */}
+								<AllProjectsCard />
 								{/* SKILLSET */}
 								<SkillsetCard />
 							</div>
 							<div className='col-xl-4'>
+								{/* --- AQUI ESTÁ O CARD ORIGINAL --- */}
 								<ProjectsCard />
 							</div>
 						</div>

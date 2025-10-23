@@ -27,13 +27,13 @@
 ===============================*/
 :root {
 	/* Existing Variables */
-	--font-family: "Bricolage Grotesque", sans-serif;
+	--font-family: 'Bricolage Grotesque', sans-serif;
 	--primary: #ff4c82;
-	--black: #1A1F2C;
+	--black: #1a1f2c;
 	--light-black: #576076;
 	--white: #ffffff;
 	--dark-theme-bg: #000;
-	--dark-theme-black: #0E1018;
+	--dark-theme-black: #0e1018;
 	--dark-theme-white: #f0f2f5;
 	--dark-theme-light-white: rgba(240, 242, 245, 0.7);
 	--paragraph: #616670;
@@ -41,7 +41,7 @@
 	--font-size: 16px;
 	--font-weight: 400;
 	--line-height: 1.6em;
-	--border: #DBDFE5;
+	--border: #dbdfe5;
 
 	/* New Variables for Repeated Values */
 	/* Font Sizes */
@@ -90,11 +90,11 @@
 
 	/* Colors */
 	--color-social-icon: #384559;
-	--color-rating: #FAAD3D;
+	--color-rating: #faad3d;
 	--color-green: green;
 	--color-greenyellow: greenyellow;
 	--color-red: red;
-	--color-nav-icon-stroke: #8991A7;
+	--color-nav-icon-stroke: #8991a7;
 
 	/* RGBA Colors & Shadows */
 	--shadow-main: 0 1px 2px 0 rgba(26, 31, 44, 0.25);
@@ -325,7 +325,7 @@ p {
 
 .common-button-groups .btn.btn-copy::before {
 	position: absolute;
-	content: "Copied to clipboard";
+	content: 'Copied to clipboard';
 	background-color: var(--black);
 	font-size: var(--fs-12);
 	font-weight: var(--fw-600);
@@ -948,7 +948,7 @@ p {
 }
 
 .timeline-card .timeline-item::before {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 6px;
 	left: -39px;
@@ -1306,7 +1306,7 @@ p {
 	height: 100%;
 	background-color: rgba(71, 112, 255, 0.3);
 	border-radius: var(--radius-50p);
-	content: "";
+	content: '';
 	animation: live 1s ease-in-out infinite;
 }
 
@@ -1517,7 +1517,7 @@ p {
 	margin-top: var(--space-50);
 }
 
-.content-box-card .awards-recognitions ul li+li {
+.content-box-card .awards-recognitions ul li + li {
 	margin-top: var(--fs-18);
 }
 
@@ -1705,7 +1705,7 @@ p {
 	height: 3px;
 	background-color: var(--text-meta);
 	border-radius: var(--radius-50p);
-	content: "";
+	content: '';
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
@@ -1772,7 +1772,7 @@ p {
 	height: var(--space-10);
 	background-color: var(--light-black);
 	border-radius: var(--radius-50p);
-	content: "";
+	content: '';
 	top: 50%;
 	left: -32px;
 	transform: translateY(-50%);
@@ -1855,7 +1855,7 @@ p {
 }
 
 .cv-item .experience-entry li::before {
-	content: "•";
+	content: '•';
 	position: absolute;
 	left: 0;
 	color: var(--primary);
@@ -2182,7 +2182,7 @@ p {
 	flex: 0 0 auto;
 }
 
-.portfolio-details-text .short-info .info-item+.info-item {
+.portfolio-details-text .short-info .info-item + .info-item {
 	margin-top: var(--fs-18);
 }
 
@@ -2281,8 +2281,6 @@ p {
 	color: var(--black);
 }
 
-
-
 .prev-and-next-btn .btn:hover,
 .btn-gallery .btn:hover {
 	background-color: var(--primary);
@@ -2340,7 +2338,7 @@ p {
 	height: 3px;
 	background-color: var(--text-meta);
 	border-radius: var(--radius-50p);
-	content: "";
+	content: '';
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
@@ -2398,9 +2396,9 @@ p {
 	position: absolute;
 	width: var(--space-6);
 	height: var(--space-6);
-	background-color: #D1D5DB;
+	background-color: #d1d5db;
 	border-radius: var(--radius-50p);
-	content: "";
+	content: '';
 	top: 12px;
 	left: 0;
 }
@@ -2641,7 +2639,7 @@ p {
 
 .dark-theme .social-media-icon ul li a {
 	border: none;
-	color: #64748B;
+	color: #64748b;
 	background-color: var(--dark-theme-black);
 }
 
@@ -2975,7 +2973,7 @@ p {
 }
 
 .dark-theme .article-details-area .article-details-text .listed-info li::before {
-	background-color: #4B5563;
+	background-color: #4b5563;
 }
 
 .dark-theme .article-details-area .article-details-text .tags-and-share .title {
@@ -3022,7 +3020,6 @@ p {
 	color: var(--dark-theme-light-white);
 }
 
-
 .dark-theme .portfolio-details-area .prev-and-next-btn .btn:hover,
 .dark-theme .btn-gallery .btn:hover {
 	background-color: var(--primary);
@@ -3055,7 +3052,7 @@ p {
 }
 
 .dark-theme .timeline-card .timeline-main::-webkit-scrollbar-thumb {
-	background: #4A5568;
+	background: #4a5568;
 }
 
 .dark-theme .timeline-card .timeline-main::-webkit-scrollbar-thumb:hover {
@@ -3236,12 +3233,10 @@ p {
 	background-color: var(--dark-theme-bg);
 }
 
-
-
 /*=============================
  * Media Queries
 ===============================*/
-@media (max-width:1399.98px) {
+@media (max-width: 1399.98px) {
 	.common-button-groups .btn {
 		padding: 16px 13px;
 		font-size: 15px;
@@ -3317,7 +3312,7 @@ p {
 	}
 }
 
-@media (max-width:1199.98px) {
+@media (max-width: 1199.98px) {
 	.navbar .navbar-main {
 		position: fixed;
 		top: 0;
@@ -3519,7 +3514,7 @@ p {
 	}
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
 	.services-item {
 		padding: 16px 13px 16px 13px;
 	}
@@ -3550,7 +3545,7 @@ p {
 	}
 }
 
-@media (max-width:767.98px) {
+@media (max-width: 767.98px) {
 	.content-box-card .working-with-area .working-with-main .items {
 		width: 73px;
 		height: 73px;
@@ -3619,7 +3614,7 @@ p {
 	}
 }
 
-@media (max-width:575.98px) {
+@media (max-width: 575.98px) {
 	.common-button-groups .btn.btn-copy {
 		margin-top: 8px;
 	}
@@ -3705,7 +3700,7 @@ p {
 }
 
 @media (min-width: 1200px) {
-	.home-area>.container>.row {
+	.home-area > .container > .row {
 		align-items: stretch;
 	}
 
@@ -3714,22 +3709,22 @@ p {
 		flex-direction: column;
 	}
 
-	.home-area .col-xl-4>.timeline-card {
+	.home-area .col-xl-4 > .timeline-card {
 		flex-grow: 1;
 	}
 
-	.home-area .col-xl-4:nth-child(2)>.row {
+	.home-area .col-xl-4:nth-child(2) > .row {
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.home-area .col-xl-4:nth-child(2)>.row>.col-lg-12 {
+	.home-area .col-xl-4:nth-child(2) > .row > .col-lg-12 {
 		display: flex;
 		flex: 1;
 	}
 
-	.home-area .col-xl-4:nth-child(2)>.row>.col-lg-12>.card {
+	.home-area .col-xl-4:nth-child(2) > .row > .col-lg-12 > .card {
 		width: 100%;
 	}
 
@@ -3744,13 +3739,13 @@ p {
 		flex-grow: 1;
 	}
 
-	.card-projects .projects-main>.row {
+	.card-projects .projects-main > .row {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.card-projects .projects-main>.row>.col-lg-12 {
+	.card-projects .projects-main > .row > .col-lg-12 {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -3761,7 +3756,6 @@ p {
 		flex-grow: 1;
 	}
 }
-
 
 /* Custom Hover Effect for Recent Projects */
 .card-projects .project-item .image {
@@ -3800,8 +3794,6 @@ p {
 	display: inline-block;
 	/* Adicionado para ajustar a linha */
 }
-
-
 
 /* Ajuste para permitir a rolagem na área de ferramentas (skills) */
 .skillset-card .tools-main {
@@ -3854,9 +3846,8 @@ p {
 .dark-theme .timeline-card .timeline-main::-webkit-scrollbar-thumb,
 .dark-theme .skillset-card .tools-main::-webkit-scrollbar-thumb,
 .dark-theme .skillset-card .skills-main::-webkit-scrollbar-thumb {
-	background: #4A5568;
+	background: #4a5568;
 }
-
 
 /* Ponto de partida: encapsule num escopo se quiser (.creative .swing-animation) */
 @keyframes swing {
@@ -3892,7 +3883,6 @@ p {
 }
 
 @keyframes bounce {
-
 	0%,
 	20%,
 	50%,
@@ -3991,7 +3981,6 @@ p {
 	border-color: var(--primary);
 }
 
-
 .gallery-image {
 	transition: transform 0.3s ease-in-out;
 	/* Adiciona uma transição suave */
@@ -4003,7 +3992,6 @@ p {
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	/* Adiciona uma sombra sutil */
 }
-
 
 /* Container para garantir a proporção quadrada */
 .image-square-container {
@@ -4044,7 +4032,6 @@ p {
 
 /* Desativa animações para Timeline e Skillset no mobile */
 @media (max-width: 767.98px) {
-
 	.timeline-slider,
 	.skillset-card .tools-slider,
 	.skillset-card .skills-slider {
@@ -4059,9 +4046,7 @@ p {
 	.skillset-card .skills-main {
 		overflow-x: auto;
 	}
-
 }
-
 
 /* ... (seu CSS existente) ... */
 
@@ -4102,7 +4087,6 @@ p {
 
 /* Opcional: Ajustes para telas menores se o botão ficar muito grande */
 @media (max-width: 575.98px) {
-
 	/* Extra small devices */
 	.scroll-to-top-btn {
 		width: 45px;
@@ -4132,7 +4116,6 @@ p {
 	cursor: pointer;
 }
 
-
 .timeline-card .timeline-main:hover {
 	overflow-y: auto;
 }
@@ -4142,7 +4125,6 @@ p {
 	overflow-x: auto;
 }
 
-
 .card-wrap.is-active {
 	opacity: 1;
 	-webkit-transform: translateY(0);
@@ -4150,4 +4132,136 @@ p {
 	z-index: 1;
 	overflow: visible;
 	/* Adicione esta linha */
+}
+/* ===================================
+   CSS para o Slider Vertical de Projetos (Correção 9 - Zerar Margens + Line-height Menor)
+   =================================== */
+
+.portfolio-slider-vertical {
+	max-height: 350px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem; /* 8px */
+	padding-right: 10px;
+}
+
+.slider-item-vertical {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	text-decoration: none;
+	background-color: var(--white);
+	padding: 0.5rem;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+	border: 1px solid var(--border);
+}
+
+.slider-item-vertical:hover {
+	background-color: var(--background);
+}
+
+.slider-item-vertical .image {
+	width: 120px;
+	height: 80px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	overflow: wrap;
+}
+
+.slider-item-vertical .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slider-item-vertical .info {
+	flex-grow: 1;
+	min-width: 0;
+}
+
+.slider-item-vertical .info .title {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--black);
+	/* (CORRIGIDO) Zera margem inferior e define altura de linha menor */
+	margin-bottom: 0 !important;
+	line-height: 1.2;
+}
+
+.slider-item-vertical .info .services {
+	font-size: 0.875rem;
+	color: var(--light-black);
+	/* (CORRIGIDO) Zera margens verticais e define altura de linha menor */
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	line-height: 1.2;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* ===================================
+   Correções para o Dark Mode
+   =================================== */
+
+.dark-theme .slider-item-vertical {
+	background-color: var(--dark-theme-bg);
+	border-color: var(--dark-theme-black);
+}
+
+.dark-theme .slider-item-vertical:hover {
+	background-color: var(--dark-theme-black);
+}
+
+.dark-theme .slider-item-vertical .info .title {
+	color: var(--dark-theme-white);
+}
+
+.dark-theme .slider-item-vertical .info .services {
+	color: var(--dark-theme-light-white);
+}
+
+/* ===================================
+   Estilos para Categorias no Slider Vertical
+   =================================== */
+
+.slider-item-vertical .info .categories {
+	font-size: 0.75rem; /* Tamanho menor */
+	color: var(--primary); /* Cor primária */
+	display: block; /* Para ocupar a linha abaixo */
+	margin-top: 0.1rem; /* Pequeno espaço acima */
+	line-height: 1.2; /* Altura de linha apertada */
+	font-weight: 500;
+	text-transform: uppercase; /* Opcional: deixar em maiúsculas */
+}
+
+/* Ajuste para Dark Mode */
+.dark-theme .slider-item-vertical .info .categories {
+	color: var(--primary); /* Mantém a cor primária no dark mode */
+}
+
+/* ===================================
+   Correção Altura Card AllProjects (Correção 11)
+   =================================== */
+
+/* Sobrescreve a altura de 100% para o corpo deste card específico */
+.card-all-projects .card-body {
+	height: auto !important; /* Permite que o corpo encolha */
+	flex-grow: 0; /* Impede que o corpo tente crescer */
+}
+
+/* Garante que a área principal também não estique desnecessariamente */
+.card-all-projects .projects-main {
+	flex-grow: 0;
+}
+
+/* Impede que esta coluna específica se estique verticalmente */
+.column-shrink-height {
+	align-self: flex-start !important; /* Faz a coluna ter a altura do seu próprio conteúdo */
+}
+
+.card-all-projects {
+	margin-bottom: 1rem !important; /* Equivalente a --space-24 */
 }
