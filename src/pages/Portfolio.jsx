@@ -40,7 +40,7 @@ export default function Portfolio() {
 						<div className='col-xl-8'>
 							<div className='card content-box-card'>
 								<div className='card-body portfolio-card'>
-									<div className='top-info'>
+									{/* <div className='top-info'>
 										<div className='text'>
 											<h1 className='main-title'>
 												Projetos <span>selecionados</span>
@@ -102,12 +102,12 @@ export default function Portfolio() {
 												</div>
 											))}
 										</div>
-									</div>
+									</div> */}
 
 									<div className='top-info'>
 										<div className='text'>
 											<h2 className='main-title'>
-												Todos <span>(2023-2025)</span>
+												Selecionados <span>(2023-2025)</span>
 											</h2>
 										</div>
 									</div>
