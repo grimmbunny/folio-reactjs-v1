@@ -12,12 +12,19 @@ export default function Portfolio() {
 	const filtered =
 		filter === 'all' ? items : items.filter((it) => (it.categories || []).includes(filter));
 
-	const renderMedia = (item) =>
-		item.embed ? (
-			<div className='portfolio-embed' dangerouslySetInnerHTML={{ __html: item.embed }} />
-		) : (
-			<img src={item.img} alt={item.title} />
-		);
+	// const renderMedia = (item) =>
+	// 	item.embed ? (
+	// 		<div className='portfolio-embed' dangerouslySetInnerHTML={{ __html: item.embed }} />
+	// 	) : (
+	// 		<img src={item.img} alt={item.title} />
+	// 	);
+
+	const renderMedia = (item) => (
+		// Isso força a renderização de uma imagem.
+		// Ele prioriza a 'thumbnailImg' que você adicionou.
+		// Se 'thumbnailImg' não existir, ele usa a 'img' principal como fallback.
+		<img src={item.thumbnailImg || item.img} alt={item.title} />
+	);
 
 	return (
 		<div id='page-content'>
