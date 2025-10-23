@@ -176,6 +176,13 @@ export default function Home() {
 													<FaWhatsapp size={16} />
 													+55 (21) 96733-2761
 												</a>
+
+												<p className='contact-info-link d-flex align-items-center gap-2'>
+													Nota: Não costumo atender ligações devido à
+													quantidade de spam. Recomendo que se identifique
+													pelo WhatsApp e, se necessário, me ligue após a
+													identificação. Agradeço! ❤︎
+												</p>
 											</div>
 										</div>
 									</div>
