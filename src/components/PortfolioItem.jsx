@@ -33,7 +33,7 @@ const portfolioItems = [
 		title: 'Case: Cidadania Já — Design de Campanha Multiplataforma',
 		categories: ['Design'],
 		thumbnailImg: '../assets/img/projects/cidadja-thumb.png',
-		img: '',
+		// img: '',
 		innerImages: [''],
 		clientFor: 'Cidadania Já',
 		services: ['Design Gráfico', 'UI/UX', 'Motion', 'IA Generativa'],
